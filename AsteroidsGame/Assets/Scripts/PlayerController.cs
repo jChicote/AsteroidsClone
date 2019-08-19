@@ -48,16 +48,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("w"))
         {
             ApplyForce();
-        } else if (Input.GetKeyUp("w"))
+        }
+        else if (Input.GetKeyUp("w"))
         {
             buildVelocity = 0;
             prevRotation = transform.up;
         }
-
-        //simple inertia
-        gameObject.transform.position += prevRotation * curVelocity;
-        //gameObject.transform.position += prevRotation * curVelocity;
-        Debug.Log(curVelocity);
+        else
+        {
+            //simple inertia
+            gameObject.transform.position += prevRotation * curVelocity;
+            //gameObject.transform.position += prevRotation * curVelocity;
+           // Debug.Log(curVelocity);
+        }
     }
 
     void ApplyForce()
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
         buildVelocity += thrustPower * Time.deltaTime;
         curVelocity = buildVelocity;
         gameObject.transform.position += transform.up * curVelocity;
-        Debug.Log(curVelocity);
+        //Debug.Log(curVelocity);
 
     }
 

@@ -11,12 +11,12 @@ public class LargeAsteroidBehaviour : MonoBehaviour
     void Start()
     {
         asteroidRB = GetComponent<Rigidbody2D>();
-        asteroidRB.velocity = transform.up * asteroidVel;
+        
     }
 
     
     void Update()
     {
-        
+        transform.position += transform.up * asteroidVel * Time.deltaTime;
     }
 }
