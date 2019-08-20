@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float presentVel;
-    bool runDecel = false;
+    float curVelocity;
+    float buildVelocity;
+    Vector2 playerPos;
     Vector3 prevRotation;
     Transform firingPos;
 
     public GameObject bullLoc;
     public GameObject bullet;
-    public int playerSpeed = 5;
-    public float decelVelocity = 0.2f;
+    public float thrustPower = 10f;
 
     private Rigidbody2D rb;
 
@@ -20,45 +20,56 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         firingPos = bullLoc.GetComponent<Transform>();
+        playerPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
     }
 
     void Update()
     { 
         //Rotates player based on mouse direction
-        Vector3 mouseScreen = Input.mousePosition; //gets position and stores into vector3
-        Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen); //retrieves vector pos of mouse from screen to world space
+        //Vector3 mouseScreen = Input.mousePosition; //gets position and stores into vector3
+        //Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen); //retrieves vector pos of mouse from screen to world space
 
         //converts coordinaties to angle in radians and is returned into objects rotation.
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+        //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
         CheckFire();
 
+        //player rotation
+        if (Input.GetKey("a"))
+        {
+            gameObject.transform.Rotate(0f, 0f, 5f);
+            Debug.Log("Vertical Axis: " + Input.GetAxisRaw("Vertical"));
+
+        } else if (Input.GetKey("d"))
+        {
+            gameObject.transform.Rotate(0f, 0f, -5f);
+            Debug.Log("Horizontal Axis: " + Input.GetAxisRaw("Horizontal"));
+        }
+
+        //gameObject.transform.position += prevRotation * currentVelocity * Time.deltaTime;
         if (Input.GetKey("w"))
         {
-            presentVel = (float)playerSpeed;
-            rb.velocity = transform.up * (float)playerSpeed;
-            runDecel = true;
-
+            ApplyForce();
         }
         else if (Input.GetKeyUp("w"))
         {
-            //preserves velocity and rotation after movement
+            buildVelocity = 0;
             prevRotation = transform.up;
         }
-        else if (runDecel == true)
+        else
         {
-            presentVel -= Time.deltaTime * playerSpeed;
-            rb.velocity = prevRotation * presentVel;
+            //simple inertia
+            gameObject.transform.position += prevRotation * curVelocity;
 
-            Debug.Log(transform.position);
-
-            //Ensure velocity remains at zero
-            if (presentVel <= 0.0f)
-            {
-                rb.velocity = new Vector2(0.0f, 0.0f);
-                runDecel = false;
-            }
         }
+    }
+
+    void ApplyForce()
+    {
+        buildVelocity += thrustPower * Time.deltaTime;
+        curVelocity = buildVelocity;
+        gameObject.transform.position += transform.up * curVelocity;
+        //Debug.Log(curVelocity);
     }
 
     //Checks whether playerhas fired bullet

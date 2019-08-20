@@ -1,8 +1,11 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BulletBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="49" Column="46" />
-      <File FileName="Assets/Scripts/BulletBehaviour.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="41" Column="71" />
+      <File FileName="Assets/Scripts/BulletBehaviour.cs" />
+      <File FileName="Assets/Scripts/LargeAsteroidBehaviour.cs" />
+      <File FileName="Assets/Scripts/AsteroidSpawner.cs" />
+      <File FileName="Assets/Scripts/ScreenWrapping.cs" Line="20" Column="66" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +13,7 @@
           <Node name="AsteroidsGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="BulletBehaviour.cs" selected="True" />
+                <Node name="PlayerController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
