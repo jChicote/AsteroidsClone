@@ -38,10 +38,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("a"))
         {
             gameObject.transform.Rotate(0f, 0f, 5f);
+            Debug.Log("Vertical Axis: " + Input.GetAxisRaw("Vertical"));
 
         } else if (Input.GetKey("d"))
         {
             gameObject.transform.Rotate(0f, 0f, -5f);
+            Debug.Log("Horizontal Axis: " + Input.GetAxisRaw("Horizontal"));
         }
 
         //gameObject.transform.position += prevRotation * currentVelocity * Time.deltaTime;

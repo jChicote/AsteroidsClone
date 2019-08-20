@@ -8,23 +8,23 @@ public class ScreenWrapping : MonoBehaviour
     float constraintRight = Screen.width;
     float bottomConstraint = Screen.height;
     float topConstraint = Screen.height;
-    float buffer = 1.0f;
+    float buffer = 0.4f;
 
     Camera cam;
-    float distanceZ;
+    float camDistance;
     
     void Start()
     {
         cam = Camera.main;
 
         //Calculates the positiion of the camera relative to the game object
-        distanceZ = Mathf.Abs(cam.transform.position.z + transform.position.z);
+        camDistance = Mathf.Abs(cam.transform.position.z + transform.position.z);
 
         //calculates the border constraints based on the game's worldspace coordinates
-        constraintLeft = cam.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, distanceZ)).x;
-        constraintRight = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, distanceZ)).x;
-        bottomConstraint = cam.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, distanceZ)).y;
-        topConstraint = cam.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, distanceZ)).y;
+        constraintLeft = cam.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, camDistance)).x;
+        constraintRight = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, camDistance)).x;
+        bottomConstraint = cam.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, camDistance)).y;
+        topConstraint = cam.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, camDistance)).y;
     }
 
     private void FixedUpdate()
