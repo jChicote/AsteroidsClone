@@ -58,8 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             //simple inertia
             gameObject.transform.position += prevRotation * curVelocity;
-            //gameObject.transform.position += prevRotation * curVelocity;
-           // Debug.Log(curVelocity);
+
         }
     }
 
@@ -69,7 +68,6 @@ public class PlayerController : MonoBehaviour
         curVelocity = buildVelocity;
         gameObject.transform.position += transform.up * curVelocity;
         //Debug.Log(curVelocity);
-
     }
 
     //Checks whether playerhas fired bullet
