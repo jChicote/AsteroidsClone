@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class LargeAsteroidBehaviour : MonoBehaviour
 {
-    public float asteroidVel = 4.0f;
+    public float asteroidVel = 2.0f;
     public GameObject smallAstPrefab;
 
     private Rigidbody2D asteroidRB;
+    private Animator anim;
 
     void Start()
     {
         asteroidRB = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         
     }
 
@@ -25,7 +27,9 @@ public class LargeAsteroidBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
-            
+            anim.SetBool("isDestroyed", true);
+            asteroidVel = 0f;
+
             int smallAstCount = Random.Range(1, 3);
             Debug.Log(smallAstCount);
             switch (smallAstCount)
@@ -43,7 +47,7 @@ public class LargeAsteroidBehaviour : MonoBehaviour
                     Instantiate(smallAstPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
                     break;
             }
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
     }
 }

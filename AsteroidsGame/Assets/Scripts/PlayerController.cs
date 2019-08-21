@@ -15,46 +15,41 @@ public class PlayerController : MonoBehaviour
     public float thrustPower = 10f;
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         firingPos = bullLoc.GetComponent<Transform>();
         playerPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     { 
-        //Rotates player based on mouse direction
-        //Vector3 mouseScreen = Input.mousePosition; //gets position and stores into vector3
-        //Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen); //retrieves vector pos of mouse from screen to world space
-
-        //converts coordinaties to angle in radians and is returned into objects rotation.
-        //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
-
         CheckFire();
 
         //player rotation
         if (Input.GetKey("a"))
         {
             gameObject.transform.Rotate(0f, 0f, 5f);
-            //Debug.Log("Vertical Axis: " + Input.GetAxisRaw("Vertical"));
 
         } else if (Input.GetKey("d"))
         {
             gameObject.transform.Rotate(0f, 0f, -5f);
-            //Debug.Log("Horizontal Axis: " + Input.GetAxisRaw("Horizontal"));
         }
 
         //gameObject.transform.position += prevRotation * currentVelocity * Time.deltaTime;
         if (Input.GetKey("w"))
         {
             ApplyForce();
+            anim.SetBool("isMoving", true);
         }
         else if (Input.GetKeyUp("w"))
         {
             buildVelocity = 0;
             prevRotation = transform.up;
+            anim.SetBool("isMoving", false);
         }
         else
         {

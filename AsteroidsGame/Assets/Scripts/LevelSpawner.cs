@@ -24,7 +24,6 @@ public class LevelSpawner : MonoBehaviour
 
         //Calculates the positiion of the camera relative to the game object
         camDistance = Mathf.Abs(cam.transform.position.z + transform.position.z);
-
         //calculates the border constraints based on the game's worldspace coordinates
         leftLimit = cam.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, camDistance)).x;
         rightLimit = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, camDistance)).x;
