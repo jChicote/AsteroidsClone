@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="41" Column="71" />
-      <File FileName="Assets/Scripts/BulletBehaviour.cs" />
-      <File FileName="Assets/Scripts/LargeAsteroidBehaviour.cs" />
-      <File FileName="Assets/Scripts/AsteroidSpawner.cs" />
-      <File FileName="Assets/Scripts/ScreenWrapping.cs" Line="20" Column="66" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="46" Column="44" />
+      <File FileName="Assets/Scripts/BulletBehaviour.cs" Line="26" Column="6" />
+      <File FileName="Assets/Scripts/LargeAsteroidBehaviour.cs" Line="7" Column="33" />
+      <File FileName="Assets/Scripts/SmallAsteroidBehaviour.cs" Line="7" Column="23" />
+      <File FileName="Assets/Scripts/AsteroidSpawner.cs" Line="22" Column="6" />
+      <File FileName="Assets/Scripts/ScreenWrapping.cs" Line="34" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
