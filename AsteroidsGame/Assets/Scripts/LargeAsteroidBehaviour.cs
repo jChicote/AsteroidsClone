@@ -32,7 +32,6 @@ public class LargeAsteroidBehaviour : MonoBehaviour
 
             //instantiates objects varying between random value
             int smallAstCount = Random.Range(1, 3);
-            Debug.Log(smallAstCount);
             switch (smallAstCount)
             {
                 case 1:

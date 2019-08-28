@@ -8,6 +8,7 @@ public class LevelSpawner : MonoBehaviour
     public GameObject[] largeAsteroids;
     public GameObject asteroidPrefab;
     public GameObject largeAlienFab;
+    public GameObject smallAlienFab;
 
     Camera cam;
     float camDistance;
@@ -55,10 +56,18 @@ public class LevelSpawner : MonoBehaviour
 
     private void SpawnAlien()
     {
-        Debug.Log("Alien Spawned)");
+       
         if (GameObject.FindGameObjectsWithTag("Alien").Length != 1)
         {
-            Instantiate(largeAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
+            int tempVal = Random.Range(0, 10);
+            if (tempVal >= 5)
+            {
+                Instantiate(largeAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
+            } else
+            {
+                Debug.Log("Small Alien Spawned)");
+                Instantiate(smallAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
+            }
         }
     }
 }

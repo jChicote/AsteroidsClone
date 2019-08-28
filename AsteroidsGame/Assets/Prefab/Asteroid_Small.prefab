@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ee120508b7d4cc1bab9ddf8eadf437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0
 --- !u!114 &634507480154138076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1922db5ba78421daad54f073406d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bottomLimit: 1356
+  topLimit: 1356
   buffer: 0.7
 --- !u!58 &7610806788950205071
 CircleCollider2D:
