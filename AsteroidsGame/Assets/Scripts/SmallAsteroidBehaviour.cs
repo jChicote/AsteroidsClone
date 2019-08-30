@@ -17,10 +17,12 @@ public class SmallAsteroidBehaviour : MonoBehaviour
         transform.position += transform.up * velocity * Time.deltaTime;
     }
 
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bullet")
         {
+            PointsController.points += 20;
             anim.SetBool("isDestroyed", true);
             velocity = 0.2f;
             Destroy(gameObject, 1f);

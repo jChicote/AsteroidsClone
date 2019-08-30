@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\LevelSpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerLifes.cs" />
+    <Compile Include="Assets\Scripts\PointsController.cs" />
     <Compile Include="Assets\Scripts\ScreenWrapping.cs" />
     <Compile Include="Assets\Scripts\SmallAlienBehaviour.cs" />
     <Compile Include="Assets\Scripts\SmallAsteroidBehaviour.cs" />

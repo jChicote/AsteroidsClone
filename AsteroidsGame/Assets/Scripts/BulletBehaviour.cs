@@ -20,6 +20,7 @@ public class BulletBehaviour : MonoBehaviour
         
     }
 
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "LargeAsteroid" || collision.gameObject.tag == "Alien")

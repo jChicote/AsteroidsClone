@@ -31,11 +31,12 @@ public class LargeAlienBehaviour : MonoBehaviour
         transform.position += newDir * speed * Time.deltaTime;
     }
 
-    //Triggered after collision
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bullet")
         {
+            PointsController.points += 400;
             CancelInvoke();
             anim.SetBool("IsDestroyed", true);
             speed = 0.2f;

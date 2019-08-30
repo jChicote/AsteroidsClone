@@ -66,7 +66,7 @@ public class SmallAlienBehaviour : MonoBehaviour
         }
     }
 
-    //Triggered after collision
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bullet" || collision.gameObject.tag == "Player")
@@ -74,6 +74,7 @@ public class SmallAlienBehaviour : MonoBehaviour
             CancelInvoke();
             anim.SetBool("isDestroyed", true);
             speed = 0.2f;
+            PointsController.points += 1000;
             Destroy(gameObject, 1f);
         }
     }

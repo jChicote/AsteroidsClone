@@ -23,12 +23,14 @@ public class LargeAsteroidBehaviour : MonoBehaviour
         transform.position += transform.up * asteroidVel * Time.deltaTime;
     }
 
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bullet")
         {
             anim.SetBool("isDestroyed", true);
             asteroidVel = 0f;
+            PointsController.points += 20;
 
             //instantiates objects varying between random value
             int smallAstCount = Random.Range(1, 3);
@@ -47,6 +49,7 @@ public class LargeAsteroidBehaviour : MonoBehaviour
                     Instantiate(smallAstPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
                     break;
             }
+
             Destroy(gameObject, 1f);
         }
     }

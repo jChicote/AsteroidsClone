@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 572}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 40189
+  controlID: 47591
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -74,7 +74,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 572}
   m_MaxSize: {x: 4002, y: 12072}
   vertical: 1
-  controlID: 40190
+  controlID: 47592
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,15 +151,15 @@ MonoBehaviour:
     y: 0
     width: 769
     height: 224
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
   - {fileID: 6}
   - {fileID: 7}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,14 +187,14 @@ MonoBehaviour:
     height: 204
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 5c867aa48fb2f4a0a923e32429bf62d1
-  m_SceneLighting: 0
+  m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 272.13608, y: 227.27228, z: -15.004339}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 272.13608, y: 227.27228, z: -15.004339}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -226,9 +226,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.3566716
+    m_Target: 197.73904
     speed: 2
-    m_Value: 2.3566716
+    m_Value: 197.73904
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -443,8 +443,8 @@ MonoBehaviour:
     y: 500
     width: 769
     height: 178
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 124}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 10408
+  m_LastSelectedObjectID: -178346
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 498}
   m_MaxSize: {x: 10004, y: 14048}
   vertical: 1
-  controlID: 40235
+  controlID: 47535
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -586,9 +586,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: de8e0000
-      m_LastClickedID: 36574
-      m_ExpandedIDs: de8e0000
+      m_SelectedIDs: 5647fdff
+      m_LastClickedID: -178346
+      m_ExpandedIDs: 22bbfdfffeeafdffc6eefdffd6fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -676,19 +676,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea8e0000
-    m_LastClickedID: 36586
+    m_SelectedIDs: 3c260000
+    m_LastClickedID: 9788
     m_ExpandedIDs: 000000000a26000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -742,9 +742,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: de8e0000
-    m_LastClickedInstanceID: 36574
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 5647fdff
+    m_LastClickedInstanceID: -178346
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 0c320000423200007a2b00003e470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

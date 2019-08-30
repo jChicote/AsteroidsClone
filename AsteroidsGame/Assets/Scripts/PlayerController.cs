@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != "bullet")
@@ -88,7 +89,6 @@ public class PlayerController : MonoBehaviour
         buildVelocity += thrustPower * Time.deltaTime;
         curVelocity = buildVelocity;
         gameObject.transform.position += transform.up * curVelocity;
-        //Debug.Log(curVelocity);
     }
 
     //Checks whether playerhas fired bullet
@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Animates character death whilst running parallel to gameplay
     private IEnumerator PlayerLoose()
     {
         transform.rotation = Quaternion.Euler(prevRotation);
