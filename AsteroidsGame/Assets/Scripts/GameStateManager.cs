@@ -1,24 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour
 {
 
     public static bool isPaused = false;
     public GameObject pauseUI;
-    
+
     void Update()
     {
-
         //changes state to pause when escape is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Ecape key has been pressed");
             if (isPaused)
             {
                 Resume();
-            } else
+            }
+            else
             {
                 Pause();
             }

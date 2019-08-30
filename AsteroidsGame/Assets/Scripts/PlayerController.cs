@@ -74,7 +74,9 @@ public class PlayerController : MonoBehaviour
             if (PlayerLifes.numofLifes != 1)
             {
                 PlayerLifes.numofLifes -= 1;
-                Destroy(gameObject);
+                curVelocity = 0.2f * Time.deltaTime;
+                anim.SetBool("isDestroyed", true);
+                Destroy(gameObject, 1f);
             } else
             {
                 PlayerLifes.numofLifes -= 1;
@@ -117,6 +119,8 @@ public class PlayerController : MonoBehaviour
         Camera.main.orthographicSize = 2;
 
         yield return new WaitForSeconds(0.3f);
+
+        anim.SetBool("isDestroyed", true);
         Destroy(gameObject, 1f);
     }
 
