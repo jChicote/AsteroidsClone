@@ -46,19 +46,22 @@ public class LargeAlienBehaviour : MonoBehaviour
     private void RandomFire()
     {
         //Checks player position relative to alien
-        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        playerTarget = player.transform.position - transform.position;
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            playerTarget = player.transform.position - transform.position;
 
-        
-        Debug.DrawRay(transform.position, playerTarget, Color.red, 5);
 
-        //Calculates the aim between the alien and player (coded to be inaccurate)
-        //Calculates angle based off tanget between two vectors > include random angle offset > convert to degrees > invert forward orientation
-        float angle = (Mathf.Atan2(playerTarget.x, playerTarget.y) + Random.Range(-1, 1)) * Mathf.Rad2Deg * -1;
-        //Debug.Log(Quaternion.Euler(0,0,angle));
+            Debug.DrawRay(transform.position, playerTarget, Color.red, 5);
 
-        //During each call only fire if val is greater than 6
-        int randomVal = Random.Range(0, 10);
-        if (randomVal >= 6) Instantiate(enemybullPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+            //Calculates the aim between the alien and player (coded to be inaccurate)
+            //Calculates angle based off tanget between two vectors > include random angle offset > convert to degrees > invert forward orientation
+            float angle = (Mathf.Atan2(playerTarget.x, playerTarget.y) + Random.Range(-1, 1)) * Mathf.Rad2Deg * -1;
+            //Debug.Log(Quaternion.Euler(0,0,angle));
+
+            //During each call only fire if val is greater than 6
+            int randomVal = Random.Range(0, 10);
+            if (randomVal >= 6) Instantiate(enemybullPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+        }
     }
 }

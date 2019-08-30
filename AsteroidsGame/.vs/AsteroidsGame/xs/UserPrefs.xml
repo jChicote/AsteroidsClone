@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SmallAlienBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerLifes.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="75" Column="13" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="81" Column="43" />
       <File FileName="Assets/Scripts/BulletBehaviour.cs" Line="31" Column="48" />
       <File FileName="Assets/Scripts/LargeAsteroidBehaviour.cs" Line="30" Column="47" />
-      <File FileName="Assets/Scripts/SmallAsteroidBehaviour.cs" Line="7" Column="23" />
+      <File FileName="Assets/Scripts/SmallAsteroidBehaviour.cs" Line="30" Column="1" />
       <File FileName="Assets/Scripts/ScreenWrapping.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/LargeAlienBehaviour.cs" Line="53" Column="71" />
-      <File FileName="Assets/Scripts/LevelSpawner.cs" Line="24" Column="27" />
+      <File FileName="Assets/Scripts/LargeAlienBehaviour.cs" Line="45" Column="1" />
+      <File FileName="Assets/Scripts/LevelSpawner.cs" Line="53" Column="94" />
       <File FileName="Assets/Scripts/EnemyBulletBehaviour.cs" Line="26" Column="6" />
-      <File FileName="Assets/Scripts/SmallAlienBehaviour.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/SmallAlienBehaviour.cs" Line="40" Column="10" />
+      <File FileName="Assets/Scripts/GameStateManager.cs" Line="23" Column="25" />
+      <File FileName="Assets/Scripts/PlayerLifes.cs" Line="6" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +19,7 @@
           <Node name="AsteroidsGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="SmallAlienBehaviour.cs" selected="True" />
+                <Node name="PlayerLifes.cs" selected="True" />
               </Node>
             </Node>
           </Node>
