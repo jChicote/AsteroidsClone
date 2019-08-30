@@ -8,8 +8,8 @@ public class ScreenWrapping : MonoBehaviour
     float camDistance;
     float leftLimit = Screen.width;
     float rightLimit = Screen.width;
-    float bottomLimit = Screen.height;
-    float topLimit = Screen.height;
+    public float bottomLimit = Screen.height;
+    public float topLimit = Screen.height;
 
     public float buffer = 0.4f;
 

@@ -12,6 +12,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         bulletRigid = GetComponent<Rigidbody2D>();
         bulletRigid.velocity = transform.up * bulletVelocity;
+        Invoke("TimedDestroy", 3);
     }
 
     void Update()
@@ -19,17 +20,17 @@ public class BulletBehaviour : MonoBehaviour
         
     }
 
-    //Destroys object when invisible
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "LargeAsteroid")
+        if (collision.gameObject.tag == "LargeAsteroid" || collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
         }
+    }
+
+    //Destroys if havn't collided with anything
+    private void TimedDestroy()
+    {
+        Destroy(gameObject);
     }
 }
