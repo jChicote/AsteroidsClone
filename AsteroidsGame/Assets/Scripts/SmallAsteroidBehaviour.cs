@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SmallAsteroidBehaviour : MonoBehaviour
 {
+    public AudioSource asteroidAudio;
+    public AudioClip astExplodeSmall;
+
     float velocity = 4.0f;
 
     private Animator anim;
@@ -12,6 +15,8 @@ public class SmallAsteroidBehaviour : MonoBehaviour
 
     void Start()
     {
+        asteroidAudio = GameObject.Find("EnemyAudioSource").GetComponent<AudioSource>();
+
         asteroidCollide = GetComponent<Collider2D>();
         anim = gameObject.GetComponent<Animator>();
     }
@@ -29,8 +34,11 @@ public class SmallAsteroidBehaviour : MonoBehaviour
             asteroidCollide.enabled = false;
 
             PointsController.points += 60;
-            anim.SetBool("isDestroyed", true);
             velocity = 0.2f;
+
+            anim.SetBool("isDestroyed", true);
+            asteroidAudio.PlayOneShot(astExplodeSmall, 1);
+
             Destroy(gameObject, 1f);
         }
     }

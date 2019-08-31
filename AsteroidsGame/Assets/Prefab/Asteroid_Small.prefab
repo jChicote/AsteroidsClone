@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ee120508b7d4cc1bab9ddf8eadf437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidAudio: {fileID: 0}
+  astExplodeSmall: {fileID: 8300000, guid: 5ba52b15641094642ab84ddeb99f3e97, type: 3}
 --- !u!114 &634507480154138076
 MonoBehaviour:
   m_ObjectHideFlags: 0

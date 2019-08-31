@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip playerThust;
     public AudioClip playerShot;
     public AudioClip playerExplosion;
+    public AudioClip gameOver;
+    public AudioClip youDied;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -129,9 +131,11 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PlayerLoose()
     {
         LevelSpawner.playerIsLost = true;
-        playerAudio.loop = false;
         transform.rotation = Quaternion.Euler(prevRotation);
         anim.SetBool("isMoving", false);
+
+        playerAudio.loop = false;
+        playerAudio.PlayOneShot(gameOver, 1f);
 
         yield return new WaitForSeconds(0.3f);
         Camera.main.orthographicSize = 8;
@@ -148,6 +152,9 @@ public class PlayerController : MonoBehaviour
         playerAudio.PlayOneShot(playerExplosion, 1f);
         anim.SetBool("isDestroyed", true);
         Destroy(gameObject, 1f);
+
+        yield return new WaitForSeconds(3f);
+        playerAudio.PlayOneShot(youDied, 1f);
     }
 
 }

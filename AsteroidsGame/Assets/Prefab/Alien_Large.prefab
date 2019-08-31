@@ -192,6 +192,7 @@ MonoBehaviour:
     type: 3}
   alienAudio: {fileID: 0}
   alienExplosion: {fileID: 8300000, guid: 9be97f3aaa80d4881a47a91045b7f19c, type: 3}
+  alienFire: {fileID: 8300000, guid: 611655c6d4d2249a298e3e8b4ae98377, type: 3}
 --- !u!114 &2100513162979392224
 MonoBehaviour:
   m_ObjectHideFlags: 0
