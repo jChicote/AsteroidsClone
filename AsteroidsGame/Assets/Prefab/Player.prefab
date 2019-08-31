@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f9b88ad519ce4881a4da5c0d8838c9b, type: 2}
+  - {fileID: 2100000, guid: 5e9d5eff427e64429bfd3b816aebbdcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,6 +121,10 @@ MonoBehaviour:
   bullLoc: {fileID: 460957022921138362}
   bullet: {fileID: 6241584436116114207, guid: 218b0e282a4f444c5b62c2d41348adfa, type: 3}
   thrustPower: 0.1
+  playerAudio: {fileID: 0}
+  playerThust: {fileID: 8300000, guid: e8039b5138646408da90903bba327f67, type: 3}
+  playerShot: {fileID: 8300000, guid: a7b33f3beb6234e3e8e07275a49b8cf2, type: 3}
+  playerExplosion: {fileID: 8300000, guid: af3336b538d464c729c5b4c830c150ff, type: 3}
 --- !u!114 &460957022511056571
 MonoBehaviour:
   m_ObjectHideFlags: 0

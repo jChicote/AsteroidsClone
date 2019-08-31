@@ -5,10 +5,14 @@ using UnityEngine;
 public class SmallAsteroidBehaviour : MonoBehaviour
 {
     float velocity = 4.0f;
+
     private Animator anim;
+    private Collider2D asteroidCollide;
+    private Rigidbody2D asteroidRB;
 
     void Start()
     {
+        asteroidCollide = GetComponent<Collider2D>();
         anim = gameObject.GetComponent<Animator>();
     }
 
@@ -22,7 +26,9 @@ public class SmallAsteroidBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
-            PointsController.points += 20;
+            asteroidCollide.enabled = false;
+
+            PointsController.points += 60;
             anim.SetBool("isDestroyed", true);
             velocity = 0.2f;
             Destroy(gameObject, 1f);

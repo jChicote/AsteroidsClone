@@ -10,10 +10,15 @@ public class PlayerController : MonoBehaviour
     Vector3 prevRotation;
     Transform firingPos;
     bool playerLost = false;
+    bool isMoving = false;
 
     public GameObject bullLoc;
     public GameObject bullet;
     public float thrustPower = 10f;
+    public AudioSource playerAudio;
+    public AudioClip playerThust;
+    public AudioClip playerShot;
+    public AudioClip playerExplosion;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -21,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        playerAudio = GameObject.Find("PlayerAudioSource").GetComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
         firingPos = bullLoc.GetComponent<Transform>();
         playerPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
@@ -45,14 +52,23 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.Rotate(0f, 0f, -5f);
             }
 
-            //gameObject.transform.position += prevRotation * currentVelocity * Time.deltaTime;
             if (Input.GetKey("w"))
             {
+                if(!isMoving)
+                {
+                    playerAudio.clip = playerThust;
+                    playerAudio.loop = true;
+                    playerAudio.Play();
+                    isMoving = true;
+                }
                 ApplyForce();
                 anim.SetBool("isMoving", true);
             }
             else if (Input.GetKeyUp("w"))
             {
+                playerAudio.loop = false;
+                isMoving = false;
+
                 buildVelocity = 0;
                 prevRotation = transform.up;
                 anim.SetBool("isMoving", false);
@@ -71,10 +87,15 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag != "bullet")
         {
-            if (PlayerLifes.numofLifes != 1)
+            if (PlayerLifes.numofLifes > 1)
             {
+                
+                playerAudio.loop = false;
+                playerAudio.PlayOneShot(playerExplosion, 1f);
+
                 PlayerLifes.numofLifes -= 1;
-                curVelocity = 0.2f * Time.deltaTime;
+                Debug.Log("num of lifes" + PlayerLifes.numofLifes);
+                playerLost = true;
                 anim.SetBool("isDestroyed", true);
                 Destroy(gameObject, 1f);
             } else
@@ -86,6 +107,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Method is used for object acceleration
     void ApplyForce()
     {
         buildVelocity += thrustPower * Time.deltaTime;
@@ -98,6 +120,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
+            playerAudio.PlayOneShot(playerShot, 1);
             Instantiate(bullet, firingPos.position, firingPos.rotation);
         }
     }
@@ -105,6 +128,8 @@ public class PlayerController : MonoBehaviour
     //Animates character death whilst running parallel to gameplay
     private IEnumerator PlayerLoose()
     {
+        LevelSpawner.playerIsLost = true;
+        playerAudio.loop = false;
         transform.rotation = Quaternion.Euler(prevRotation);
         anim.SetBool("isMoving", false);
 
@@ -118,8 +143,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         Camera.main.orthographicSize = 2;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
 
+        playerAudio.PlayOneShot(playerExplosion, 1f);
         anim.SetBool("isDestroyed", true);
         Destroy(gameObject, 1f);
     }

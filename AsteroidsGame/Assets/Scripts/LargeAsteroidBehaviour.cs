@@ -7,11 +7,13 @@ public class LargeAsteroidBehaviour : MonoBehaviour
     public float asteroidVel = 2.0f;
     public GameObject smallAstPrefab;
 
+    private Collider2D asteroidCollide;
     private Rigidbody2D asteroidRB;
     private Animator anim;
 
     void Start()
     {
+        asteroidCollide = GetComponent<Collider2D>();
         asteroidRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         
@@ -28,6 +30,7 @@ public class LargeAsteroidBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
+            asteroidCollide.enabled = false;
             anim.SetBool("isDestroyed", true);
             asteroidVel = 0f;
             PointsController.points += 20;
