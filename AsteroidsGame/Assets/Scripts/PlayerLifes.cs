@@ -26,7 +26,10 @@ public class PlayerLifes : MonoBehaviour
         }
 
         if (PointsController.points >= gainHealth) {
-            numofLifes += 1;
+            if(numofLifes < 6)
+            {
+                numofLifes += 1;
+            }
             gainHealth += 2000;
         }
     }

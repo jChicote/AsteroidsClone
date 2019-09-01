@@ -127,6 +127,7 @@ MonoBehaviour:
   playerExplosion: {fileID: 8300000, guid: af3336b538d464c729c5b4c830c150ff, type: 3}
   gameOver: {fileID: 8300000, guid: 4603268d0d7b6431b98d151a9ce7259a, type: 3}
   youDied: {fileID: 8300000, guid: 2750472e2347d42a0bc1be109759bb18, type: 3}
+  baseExplosion: {fileID: 8300000, guid: d8a154a2b8b184023b731dba35e844c3, type: 3}
 --- !u!114 &460957022511056571
 MonoBehaviour:
   m_ObjectHideFlags: 0

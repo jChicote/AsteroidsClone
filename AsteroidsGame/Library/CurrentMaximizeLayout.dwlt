@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 474}
   m_MaxSize: {x: 18006, y: 14024}
   vertical: 0
-  controlID: 18654
+  controlID: 25160
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 424}
   m_MaxSize: {x: 4002, y: 12024}
   vertical: 1
-  controlID: 18655
+  controlID: 25161
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,10 +355,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 629e48261e7f548658b390e5ae6448f0,
+  m_AnimatorController: {fileID: 9100000, guid: 521d967e4fa8a4dfa8c56390cfb432a0,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107124764007274082, guid: 629e48261e7f548658b390e5ae6448f0,
+  - m_Target: {fileID: 1107697879797298300, guid: 521d967e4fa8a4dfa8c56390cfb432a0,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 27490
+  m_LastSelectedObjectID: 33716
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 474}
   m_MaxSize: {x: 10004, y: 14024}
   vertical: 1
-  controlID: 18696
+  controlID: 24870
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -586,9 +586,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 626b0000
-      m_LastClickedID: 27490
-      m_ExpandedIDs: 626b0000
+      m_SelectedIDs: b4830000
+      m_LastClickedID: 33716
+      m_ExpandedIDs: 
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -676,19 +676,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Audio
+    - Assets/Prefab
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Audio
+  - Assets/Prefab
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: aa270000
-    m_LastClickedID: 10154
+    m_SelectedIDs: 86260000
+    m_LastClickedID: 9862
     m_ExpandedIDs: 000000001e2600005626000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -742,8 +742,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 626b0000
-    m_LastClickedInstanceID: 27490
+    m_SelectedInstanceIDs: b4830000
+    m_LastClickedInstanceID: 33716
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 0c320000423200007a2b00003e470000c09a0000
     m_RenameOverlay:

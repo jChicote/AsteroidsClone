@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip playerExplosion;
     public AudioClip gameOver;
     public AudioClip youDied;
+    public AudioClip baseExplosion;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag != "bullet")
         {
+            gameObject.GetComponent<Collider2D>().enabled = false;
             if (PlayerLifes.numofLifes > 1)
             {
                 
@@ -150,10 +152,12 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         playerAudio.PlayOneShot(playerExplosion, 1f);
+        playerAudio.PlayOneShot(baseExplosion, 1f);
+
         anim.SetBool("isDestroyed", true);
         Destroy(gameObject, 1f);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         playerAudio.PlayOneShot(youDied, 1f);
     }
 

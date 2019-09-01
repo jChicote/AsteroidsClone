@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    public float bulletVelocity = 10.0f;
+    public float bulletVelocity = 15.0f;
 
     private Rigidbody2D bulletRigid;
 
@@ -23,7 +23,7 @@ public class BulletBehaviour : MonoBehaviour
     //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "LargeAsteroid" || collision.gameObject.tag == "Alien")
+        if (collision.gameObject.tag == "LargeAsteroid" || collision.gameObject.tag == "SmallAsteroid" || collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
         }
