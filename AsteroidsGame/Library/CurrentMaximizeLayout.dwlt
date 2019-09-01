@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 474}
   m_MaxSize: {x: 18006, y: 14024}
   vertical: 0
-  controlID: 25160
+  controlID: 25772
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 424}
   m_MaxSize: {x: 4002, y: 12024}
   vertical: 1
-  controlID: 25161
+  controlID: 25773
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -445,12 +445,12 @@ MonoBehaviour:
     height: 179
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 10}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 10}
   - {fileID: 11}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 33716
+  m_LastSelectedObjectID: 10284
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 474}
   m_MaxSize: {x: 10004, y: 14024}
   vertical: 1
-  controlID: 24870
+  controlID: 25827
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -586,8 +586,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b4830000
-      m_LastClickedID: 33716
+      m_SelectedIDs: 2c280000
+      m_LastClickedID: 0
       m_ExpandedIDs: 
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -676,19 +676,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab
+    - Assets/Animations
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefab
+  - Assets/Animations
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 86260000
-    m_LastClickedID: 9862
+    m_SelectedIDs: 7e270000
+    m_LastClickedID: 10110
     m_ExpandedIDs: 000000001e2600005626000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -742,26 +742,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b4830000
-    m_LastClickedInstanceID: 33716
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 2c280000
+    m_LastClickedInstanceID: 10284
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0c320000423200007a2b00003e470000c09a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Animations
+      m_OriginalName: Animations
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10110
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 15}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
