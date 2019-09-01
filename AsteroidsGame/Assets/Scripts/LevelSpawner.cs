@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelSpawner : MonoBehaviour
 {
+    public static bool playerIsLost = false;
 
     public GameObject[] largeAsteroids;
     public GameObject asteroidPrefab;
@@ -41,18 +42,22 @@ public class LevelSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        largeAsteroids = GameObject.FindGameObjectsWithTag("LargeAsteroid");
-        amount = largeAsteroids.Length;
-
-        if (amount != 3 && amount <= 3)
+        if (!playerIsLost)
         {
-            SpawnAsteroids();
-        }
+            largeAsteroids = GameObject.FindGameObjectsWithTag("LargeAsteroid");
+            amount = largeAsteroids.Length;
 
-        //respawning player
-        if (GameObject.FindGameObjectWithTag("Player") == null && PlayerLifes.numofLifes != 0)
-        {
-            SpawnPlayer();
+            if (amount != 3 && amount <= 3)
+            {
+                SpawnAsteroids();
+            }
+
+            //respawning player
+            if (GameObject.FindGameObjectWithTag("Player") == null && PlayerLifes.numofLifes > 0)
+            {
+                Debug.Log("Spawning player at lives " + PlayerLifes.numofLifes);
+                SpawnPlayer();
+            }
         }
     }
 

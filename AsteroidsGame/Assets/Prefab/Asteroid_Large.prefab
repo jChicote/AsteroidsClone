@@ -120,6 +120,9 @@ MonoBehaviour:
   asteroidVel: 4
   smallAstPrefab: {fileID: 8624180947739538506, guid: 0413ecebd757e42f98dec183aaf5e4ef,
     type: 3}
+  asteroidAudio: {fileID: 0}
+  asteroidExplosion: {fileID: 8300000, guid: d128c15fe77bb41feaef15c064ff1873, type: 3}
+  explosionBase: {fileID: 8300000, guid: d8a154a2b8b184023b731dba35e844c3, type: 3}
 --- !u!114 &6874558519104318990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1922db5ba78421daad54f073406d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bottomLimit: 1356
+  topLimit: 1356
   buffer: 1.2
 --- !u!58 &7160636344745622565
 CircleCollider2D:

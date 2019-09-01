@@ -25,6 +25,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

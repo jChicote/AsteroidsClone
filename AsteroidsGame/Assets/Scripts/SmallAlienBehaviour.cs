@@ -6,7 +6,11 @@ public class SmallAlienBehaviour : MonoBehaviour
 {
     public GameObject enemybullPrefab;
     public GameObject player;
+    public AudioSource alienAudio;
+    public AudioClip alienExplosion;
+    public AudioClip alienFiring;
 
+    private Collider2D alienCollide;
     private Vector3 playerTarget;
     private Vector3 newDir;
     private Vector3 bullRot;
@@ -22,6 +26,8 @@ public class SmallAlienBehaviour : MonoBehaviour
 
     void Start()
     {
+        alienCollide = GetComponent<Collider2D>();
+        alienAudio = GameObject.Find("EnemyAudioSource").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
 
         if (Random.Range(0, 10) > 5)  speed *= -1;
@@ -66,14 +72,18 @@ public class SmallAlienBehaviour : MonoBehaviour
         }
     }
 
-    //Triggered after collision
+    //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bullet" || collision.gameObject.tag == "Player")
         {
+            alienCollide.enabled = false;
+            alienAudio.PlayOneShot(alienExplosion, 1f);
+
             CancelInvoke();
             anim.SetBool("isDestroyed", true);
             speed = 0.2f;
+            PointsController.points += 1000;
             Destroy(gameObject, 1f);
         }
     }
@@ -85,9 +95,6 @@ public class SmallAlienBehaviour : MonoBehaviour
             //Checks player position relative to alien
             playerTarget = playerTrans.transform.position - transform.position;
 
-
-            Debug.DrawRay(transform.position, playerTarget, Color.red, 5);
-
             //Calculates the aim between the alien and player (coded to be inaccurate)
             //Calculates angle using tan between two vectors > convert to degrees > invert forward orientation
             float angle = (Mathf.Atan2(playerTarget.x, playerTarget.y)) * Mathf.Rad2Deg * -1;
@@ -95,7 +102,11 @@ public class SmallAlienBehaviour : MonoBehaviour
 
             //During each call only fire if val is greater than 6
             int randomVal = Random.Range(0, 10);
-            if (randomVal >= 5) Instantiate(enemybullPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+            if (randomVal >= 6)
+            {
+                alienAudio.PlayOneShot(alienFiring, 1f);
+                Instantiate(enemybullPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+            }
         }
     }
 }

@@ -9,17 +9,28 @@ public class PlayerLifes : MonoBehaviour
     public Image[] lifes;
     public Sprite lifeIMG;
 
+    private int gainHealth = 2000;
+
     void Update()
     {
         for (int i = 0; i < lifes.Length; i++)
         {
-            if(i < numofLifes)
+            if (i < numofLifes)
             {
                 lifes[i].enabled = true;
-            } else
+            }
+            else
             {
                 lifes[i].enabled = false;
             }
+        }
+
+        if (PointsController.points >= gainHealth) {
+            if(numofLifes < 6)
+            {
+                numofLifes += 1;
+            }
+            gainHealth += 2000;
         }
     }
 }

@@ -5,7 +5,11 @@ using UnityEngine;
 public class LargeAlienBehaviour : MonoBehaviour
 {
     public GameObject enemybullPrefab;
+    public AudioSource alienAudio;
+    public AudioClip alienExplosion;
+    public AudioClip alienFire;
 
+    private Collider2D alienCollide;
     private Vector3 playerTarget;
     private Vector3 newDir;
     private Vector3 bullRot;
@@ -17,6 +21,9 @@ public class LargeAlienBehaviour : MonoBehaviour
 
     void Start()
     {
+        alienCollide = GetComponent<Collider2D>();
+        alienAudio = GameObject.Find("EnemyAudioSource").GetComponent<AudioSource>();
+
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         playerTarget = player.transform.position - transform.position;
@@ -29,18 +36,6 @@ public class LargeAlienBehaviour : MonoBehaviour
     void Update()
     {
         transform.position += newDir * speed * Time.deltaTime;
-    }
-
-    //Triggered after collision
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "bullet")
-        {
-            CancelInvoke();
-            anim.SetBool("IsDestroyed", true);
-            speed = 0.2f;
-            Destroy(gameObject, 1f);
-        }
     }
 
     private void RandomFire()
@@ -61,7 +56,27 @@ public class LargeAlienBehaviour : MonoBehaviour
 
             //During each call only fire if val is greater than 6
             int randomVal = Random.Range(0, 10);
-            if (randomVal >= 6) Instantiate(enemybullPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+            if (randomVal >= 6)
+            {
+                alienAudio.PlayOneShot(alienFire, 1f);
+                Instantiate(enemybullPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+            }
+        }
+    }
+
+    //enters trigger when collision is detected
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bullet")
+        {
+            alienCollide.enabled = false;
+            alienAudio.PlayOneShot(alienExplosion, 1f);
+
+            PointsController.points += 400;
+            CancelInvoke();
+            anim.SetBool("IsDestroyed", true);
+            speed = 0.2f;
+            Destroy(gameObject, 1f);
         }
     }
 }
