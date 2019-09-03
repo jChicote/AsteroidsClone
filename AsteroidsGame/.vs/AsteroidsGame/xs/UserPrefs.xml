@@ -1,18 +1,9 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="49" Column="58" />
-      <File FileName="Assets/Scripts/BulletBehaviour.cs" Line="23" Column="48" />
-      <File FileName="Assets/Scripts/LargeAsteroidBehaviour.cs" Line="40" Column="37" />
-      <File FileName="Assets/Scripts/SmallAsteroidBehaviour.cs" Line="20" Column="5" />
-      <File FileName="Assets/Scripts/ScreenWrapping.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/LargeAlienBehaviour.cs" Line="34" Column="48" />
-      <File FileName="Assets/Scripts/LevelSpawner.cs" Line="53" Column="94" />
-      <File FileName="Assets/Scripts/EnemyBulletBehaviour.cs" Line="28" Column="48" />
-      <File FileName="Assets/Scripts/SmallAlienBehaviour.cs" Line="67" Column="6" />
-      <File FileName="Assets/Scripts/GameStateManager.cs" Line="32" Column="26" />
-      <File FileName="Assets/Scripts/PlayerLifes.cs" Line="13" Column="6" />
-      <File FileName="Assets/Scripts/PointsController.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="36" Column="19" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="32" Column="23" />
+      <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,8 +11,12 @@
           <Node name="AsteroidsGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="AudioScripts" expanded="True" />
-                <Node name="PlayerController.cs" selected="True" />
+                <Node name="Alien" expanded="True" />
+                <Node name="Asteroids" expanded="True">
+                  <Node name="LargeAsteroidBehaviour.cs" selected="True" />
+                </Node>
+                <Node name="Level" expanded="True" />
+                <Node name="Player" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -31,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9f1d3f46-78f9-4399-8ab4-91db84a822a6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d87e35fc-88a1-4360-a1bb-03d561b11ede" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

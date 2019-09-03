@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 460957022511056572}
   - component: {fileID: 460957022511056575}
   - component: {fileID: 460957022511056571}
+  - component: {fileID: 8594110217018377811}
   - component: {fileID: 460957022511056568}
   - component: {fileID: 460957022511056569}
   m_Layer: 8
@@ -119,11 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullLoc: {fileID: 460957022921138362}
-  bullet: {fileID: 6241584436116114207, guid: 218b0e282a4f444c5b62c2d41348adfa, type: 3}
   thrustPower: 0.1
   playerAudio: {fileID: 0}
   playerThust: {fileID: 8300000, guid: e8039b5138646408da90903bba327f67, type: 3}
-  playerShot: {fileID: 8300000, guid: a7b33f3beb6234e3e8e07275a49b8cf2, type: 3}
   playerExplosion: {fileID: 8300000, guid: af3336b538d464c729c5b4c830c150ff, type: 3}
   gameOver: {fileID: 8300000, guid: 4603268d0d7b6431b98d151a9ce7259a, type: 3}
   youDied: {fileID: 8300000, guid: 2750472e2347d42a0bc1be109759bb18, type: 3}
@@ -143,6 +142,25 @@ MonoBehaviour:
   bottomLimit: 642
   topLimit: 642
   buffer: 0.4
+--- !u!114 &8594110217018377811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460957022511056574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14069322f200e4527aca57d547376969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAudio: {fileID: 0}
+  classicBullet: {fileID: 8300000, guid: a7b33f3beb6234e3e8e07275a49b8cf2, type: 3}
+  bulletLocation: {fileID: 460957022921138362}
+  normalBullet: {fileID: 6241584436116114207, guid: 218b0e282a4f444c5b62c2d41348adfa,
+    type: 3}
+  laserFire: {fileID: 0}
+  trackingBullet: {fileID: 0}
 --- !u!95 &460957022511056568
 Animator:
   serializedVersion: 3
