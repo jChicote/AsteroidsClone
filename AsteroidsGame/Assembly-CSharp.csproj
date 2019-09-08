@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLifes.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\PowerUp\PerkBehaviour.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

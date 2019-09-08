@@ -1,9 +1,13 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/WeaponController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/BulletBehaviour.cs">
     <Files>
       <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="53" Column="23" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="24" Column="36" />
-      <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" Line="61" Column="57" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="86" Column="6" />
+      <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" Line="30" Column="9" />
+      <File FileName="Assets/Scripts/PowerUp/PerkBehaviour.cs" Line="31" Column="13" />
+      <File FileName="Assets/Scripts/Alien/LargeAlienBehaviour.cs" Line="62" Column="95" />
+      <File FileName="Assets/Scripts/Alien/SmallAlienBehaviour.cs" Line="63" Column="33" />
+      <File FileName="Assets/Scripts/Player/BulletBehaviour.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,8 +19,9 @@
                 <Node name="Asteroids" expanded="True" />
                 <Node name="Level" expanded="True" />
                 <Node name="Player" expanded="True">
-                  <Node name="WeaponController.cs" selected="True" />
+                  <Node name="BulletBehaviour.cs" selected="True" />
                 </Node>
+                <Node name="PowerUp" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -26,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d87e35fc-88a1-4360-a1bb-03d561b11ede" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f07d3031-c8c2-4ecd-b2b9-5a997bd27d07" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

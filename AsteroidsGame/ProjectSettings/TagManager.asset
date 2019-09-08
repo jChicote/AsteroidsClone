@@ -9,6 +9,7 @@ TagManager:
   - SmallAsteroid
   - Alien
   - AlienBullet
+  - perk
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Asteroid
   - Alien
   - AlienBullet
-  - 
+  - Perk
   - 
   - 
   - 

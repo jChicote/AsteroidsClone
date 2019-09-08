@@ -50,6 +50,13 @@ public class WeaponController : MonoBehaviour
                 break;
             case 1:
                 Debug.Log("Powerup 1 Active >> DOUBLE FIRE");
+                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
+                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
+                break;
+            case 2:
+                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
+                Instantiate(normalBullet, firingPos.position, firingPos.rotation);
+                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
                 break;
         }
     }
