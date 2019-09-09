@@ -11,8 +11,8 @@ public class WeaponController : MonoBehaviour
 
     //child transform object
     public GameObject bulletLocation;
-
     public GameObject normalBullet;
+    public GameObject fadingBullet;
     public GameObject laserFire;
     public GameObject trackingBullet;
 
@@ -28,12 +28,6 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey("space"))
-        {
-            weaponAudio.PlayOneShot(classicBullet, 1);
-            Instantiate(normalBullet, firingPos.position, firingPos.rotation);
-        }*/
-
         if (Input.GetKeyDown("space"))
         {
             CheckMode();
@@ -45,18 +39,20 @@ public class WeaponController : MonoBehaviour
         switch (weaponMode)
         {
             case 0:
+                Debug.Log("On Single Fire");
                 weaponAudio.PlayOneShot(classicBullet, 1);
                 Instantiate(normalBullet, firingPos.position, firingPos.rotation);
                 break;
             case 1:
-                Debug.Log("Powerup 1 Active >> DOUBLE FIRE");
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
+                Debug.Log("On Double Fire");
+                Instantiate(fadingBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 45f));
+                Instantiate(fadingBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 45f));
                 break;
             case 2:
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
+                Debug.Log("On Triple Fire");
                 Instantiate(normalBullet, firingPos.position, firingPos.rotation);
                 Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
+                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
                 break;
         }
     }

@@ -11,8 +11,8 @@ public class BulletBehaviour : MonoBehaviour
     void Start()
     {
         bulletRigid = GetComponent<Rigidbody2D>();
-        bulletRigid.velocity = transform.up * bulletVelocity;
-        Invoke("TimedDestroy", 3);
+        bulletRigid.velocity = transform.up * (bulletVelocity + GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetVelocity);
+        Invoke("TimedDestroy", 2f);
     }
 
     void Update()

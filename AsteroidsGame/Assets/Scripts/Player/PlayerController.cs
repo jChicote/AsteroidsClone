@@ -85,6 +85,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public float GetVelocity
+    {
+        get { return curVelocity;  }
+    }
+
     //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {

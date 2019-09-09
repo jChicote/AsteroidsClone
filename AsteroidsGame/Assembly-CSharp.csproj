@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Level\PointsController.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenWrapping.cs" />
     <Compile Include="Assets\Scripts\Player\BulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Player\FadingBulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLifes.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponController.cs" />

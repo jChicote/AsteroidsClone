@@ -159,6 +159,8 @@ MonoBehaviour:
   bulletLocation: {fileID: 460957022921138362}
   normalBullet: {fileID: 6241584436116114207, guid: 218b0e282a4f444c5b62c2d41348adfa,
     type: 3}
+  fadingBullet: {fileID: 5195592233647780088, guid: 811c2f25a8aa545a9a18bd12ff050563,
+    type: 3}
   laserFire: {fileID: 0}
   trackingBullet: {fileID: 0}
 --- !u!95 &460957022511056568
