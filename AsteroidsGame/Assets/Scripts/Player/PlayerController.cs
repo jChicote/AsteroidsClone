@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
     bool isMoving = false;
 
     public GameObject bullLoc;
-    public GameObject bullet;
+    //public GameObject bullet;
     public float thrustPower = 10f;
     public AudioSource playerAudio;
     public AudioClip playerThust;
-    public AudioClip playerShot;
+    //public AudioClip playerShot;
     public AudioClip playerExplosion;
     public AudioClip gameOver;
     public AudioClip youDied;
@@ -85,10 +85,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public float GetVelocity
+    {
+        get { return curVelocity;  }
+    }
+
     //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "bullet")
+        if (collision.gameObject.tag != "perk")
         {
             gameObject.GetComponent<Collider2D>().enabled = false;
             if (PlayerLifes.numofLifes > 1)
@@ -122,11 +127,11 @@ public class PlayerController : MonoBehaviour
     //Checks whether playerhas fired bullet
     void CheckFire()
     {
-        if (Input.GetKeyDown("space"))
+        /*if (Input.GetKeyDown("space"))
         {
             playerAudio.PlayOneShot(playerShot, 1);
             Instantiate(bullet, firingPos.position, firingPos.rotation);
-        }
+        }*/
     }
 
     //Animates character death whilst running parallel to gameplay

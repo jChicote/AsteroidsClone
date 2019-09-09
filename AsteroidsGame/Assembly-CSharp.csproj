@@ -60,18 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\EnemyBulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\GameStateManager.cs" />
-    <Compile Include="Assets\Scripts\LargeAlienBehaviour.cs" />
-    <Compile Include="Assets\Scripts\LargeAsteroidBehaviour.cs" />
-    <Compile Include="Assets\Scripts\LevelSpawner.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\PlayerLifes.cs" />
-    <Compile Include="Assets\Scripts\PointsController.cs" />
-    <Compile Include="Assets\Scripts\ScreenWrapping.cs" />
-    <Compile Include="Assets\Scripts\SmallAlienBehaviour.cs" />
-    <Compile Include="Assets\Scripts\SmallAsteroidBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Alien\EnemyBulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Alien\LargeAlienBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Alien\SmallAlienBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Asteroids\LargeAsteroidBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Asteroids\SmallAsteroidBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Level\GameStateManager.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelSpawner.cs" />
+    <Compile Include="Assets\Scripts\Level\PointsController.cs" />
+    <Compile Include="Assets\Scripts\Level\ScreenWrapping.cs" />
+    <Compile Include="Assets\Scripts\Player\BulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Player\FadingBulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLifes.cs" />
+    <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\PowerUp\PerkBehaviour.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
