@@ -12,6 +12,7 @@ public class WeaponController : MonoBehaviour
     //child transform object
     public GameObject bulletLocation;
     public GameObject normalBullet;
+    public GameObject powerBullet;
     public GameObject fadingBullet;
     public GameObject laserFire;
     public GameObject trackingBullet;
@@ -28,10 +29,26 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKey("space"))
         {
-            CheckMode();
+            if (Input.GetKeyDown("space"))
+            {
+                CheckMode();
+            } else if (weaponMode == 3)
+            {
+                //keep true
+                laserBeam.isHeld = true;
+            }
+        } else if(Input.GetKeyUp("space"))
+        {
+            //set to false
+            laserBeam.isHeld = false;
         }
+    }
+
+    public GameObject GetWeaponLoc
+    {
+        get { return bulletLocation; }
     }
 
     void CheckMode()
@@ -50,9 +67,13 @@ public class WeaponController : MonoBehaviour
                 break;
             case 2:
                 Debug.Log("On Triple Fire");
-                Instantiate(normalBullet, firingPos.position, firingPos.rotation);
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
+                Instantiate(powerBullet, firingPos.position, firingPos.rotation);
+                Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
+                Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
+                break;
+            case 3:
+                Debug.Log("On Laser Fire");
+                Instantiate(laserFire, firingPos.position, firingPos.rotation);
                 break;
         }
     }

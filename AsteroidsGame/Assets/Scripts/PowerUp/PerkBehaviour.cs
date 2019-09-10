@@ -17,14 +17,18 @@ public class PerkBehaviour : MonoBehaviour
         if (Random.Range(0, 10) > 5) speed *= -1;
         vertForce = Random.Range(-10, 10);
 
-        perkType = Random.Range(0, 1);
-        switch(perkType)
+        //perkType = Random.Range(0, 1);
+        perkType = 2;
+        switch (perkType)
         {
             case 0:
                 anim.SetBool("isDouble", true);
                 break;
             case 1:
                 anim.SetBool("isTriple", true);
+                break;
+            case 2:
+                anim.SetBool("isLaser", true);
                 break;
         }
     }
@@ -46,6 +50,9 @@ public class PerkBehaviour : MonoBehaviour
             } else if (perkType == 1)
             {
                 WeaponController.weaponMode = 2;
+            } else if (perkType == 2)
+            {
+                WeaponController.weaponMode = 3;
             }
             perkCollider.enabled = false;
             Destroy(gameObject);
