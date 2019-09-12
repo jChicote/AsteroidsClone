@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6725029556630904629}
   - component: {fileID: 1153428763612436466}
   - component: {fileID: 6725029556630904586}
+  - component: {fileID: 7470545254684049642}
   m_Layer: 9
   m_Name: laserFireBeam
   m_TagString: bullet
@@ -93,3 +94,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingPos: {fileID: 0}
+  startPrefab: {fileID: 683442919353998650, guid: 1a3c099b4b50a40bcab4b877202b5a86,
+    type: 3}
+  ricochetPrefab: {fileID: 4436025506520363381, guid: 1e1b4e990b9d745958803a61826dd09d,
+    type: 3}
+--- !u!95 &7470545254684049642
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725029556630904587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efd495b0729264304a5f362a4c0741d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
