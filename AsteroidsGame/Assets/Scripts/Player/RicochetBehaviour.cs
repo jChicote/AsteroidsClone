@@ -14,9 +14,8 @@ public class RicochetBehaviour : MonoBehaviour
 
     void Update()
     {
-        //speed *= 0.90f;
+        //travel in direction until destroyed
         transform.position += transform.up * speed * Time.deltaTime;
-
         Destroy(gameObject, 0.4f);
     }
 

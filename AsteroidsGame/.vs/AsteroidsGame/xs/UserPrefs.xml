@@ -1,18 +1,21 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/RicochetBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PointerBehaviour.cs">
     <Files>
       <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="54" Column="21" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="78" Column="14" />
-      <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="42" Column="6" />
+      <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" Line="33" Column="29" />
       <File FileName="Assets/Scripts/PowerUp/PerkBehaviour.cs" Line="32" Column="23" />
-      <File FileName="Assets/Scripts/Alien/LargeAlienBehaviour.cs" Line="61" Column="55" />
-      <File FileName="Assets/Scripts/Alien/SmallAlienBehaviour.cs" Line="49" Column="10" />
+      <File FileName="Assets/Scripts/Alien/LargeAlienBehaviour.cs" Line="44" Column="6" />
+      <File FileName="Assets/Scripts/Alien/SmallAlienBehaviour.cs" Line="78" Column="6" />
       <File FileName="Assets/Scripts/Player/BulletBehaviour.cs" Line="8" Column="1" />
-      <File FileName="Assets/Scripts/Level/LevelSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Level/LevelSpawner.cs" Line="44" Column="6" />
       <File FileName="Assets/Scripts/Player/FadingBulletBehaviour.cs" Line="15" Column="35" />
       <File FileName="Assets/Scripts/Player/powerFulBullet.cs" Line="10" Column="17" />
-      <File FileName="Assets/Scripts/Player/laserBeam.cs" Line="23" Column="46" />
-      <File FileName="Assets/Scripts/Player/RicochetBehaviour.cs" Line="16" Column="9" />
+      <File FileName="Assets/Scripts/Player/laserBeam.cs" Line="64" Column="23" />
+      <File FileName="Assets/Scripts/Player/RicochetBehaviour.cs" Line="15" Column="18" />
+      <File FileName="Assets/Scripts/Player/PointerBehaviour.cs" Line="57" Column="27" />
+      <File FileName="Assets/Scripts/Level/ScreenWrapping.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Asteroids/SmallAsteroidBehaviour.cs" Line="25" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +27,7 @@
                 <Node name="Asteroids" expanded="True" />
                 <Node name="Level" expanded="True" />
                 <Node name="Player" expanded="True">
-                  <Node name="RicochetBehaviour.cs" selected="True" />
+                  <Node name="PointerBehaviour.cs" selected="True" />
                 </Node>
                 <Node name="PowerUp" expanded="True" />
               </Node>

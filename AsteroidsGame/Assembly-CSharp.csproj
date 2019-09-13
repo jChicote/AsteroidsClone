@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Player\laserBeam.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLifes.cs" />
+    <Compile Include="Assets\Scripts\Player\PointerBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\powerFulBullet.cs" />
     <Compile Include="Assets\Scripts\Player\RicochetBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponController.cs" />

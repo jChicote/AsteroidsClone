@@ -12,6 +12,7 @@ public class laserBeam : MonoBehaviour
     RaycastHit2D ray;
     GameObject laserStart;
 
+    private Collider2D laserCollider;
     private float batteryPower = 100f;
     private float hitDistance;
     private bool isReleased = false;
@@ -24,6 +25,7 @@ public class laserBeam : MonoBehaviour
         firingPos = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponController>().GetWeaponLoc.transform;
         anim = GetComponent<Animator>();
         laserStart = Instantiate(startPrefab, firingPos.position, Quaternion.identity);
+        laserCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -79,6 +81,7 @@ public class laserBeam : MonoBehaviour
         }
     }
 
+    //produces range of directions for ricochet to be travelling
     private float RangeRandDir()
     {
         Vector3 diff = firingPos.position - new Vector3(ray.point.x, ray.point.y, 0);
