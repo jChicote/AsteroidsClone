@@ -15,9 +15,11 @@ public class WeaponController : MonoBehaviour
     public GameObject powerBullet;
     public GameObject fadingBullet;
     public GameObject laserFire;
-    public GameObject trackingBullet;
+    public GameObject pulseScatterFire;
 
     Transform firingPos;
+
+    private int pulseCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,15 @@ public class WeaponController : MonoBehaviour
             case 3:
                 Debug.Log("On Laser Fire");
                 Instantiate(laserFire, firingPos.position, firingPos.rotation);
+                break;
+            case 4:
+                Debug.Log("Pulse Scatter Fire");
+                pulseCount = GameObject.FindGameObjectsWithTag("bullet").Length;
+                Debug.Log(pulseCount);
+                if (pulseCount < 6)
+                {
+                    Instantiate(pulseScatterFire, firingPos.position, firingPos.rotation);
+                }
                 break;
         }
     }

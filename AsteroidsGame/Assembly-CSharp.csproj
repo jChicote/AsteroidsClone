@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Player\RicochetBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
     <Compile Include="Assets\Scripts\PowerUp\PerkBehaviour.cs" />
+    <Compile Include="Assets\Scripts\PowerUp\PulseBulletBehaviour.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PointerBehaviour : MonoBehaviour
 {
-    public static Vector3 pointedLoc;
+    public Vector3 pointedLoc;
 
-    private GameObject targetObj;
+    public static GameObject targetObj;
     private bool targetLock = false;
     private Animator anim;
     private float timeCount = 0f;

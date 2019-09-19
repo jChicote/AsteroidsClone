@@ -18,7 +18,7 @@ public class PerkBehaviour : MonoBehaviour
         vertForce = Random.Range(-10, 10);
 
         //perkType = Random.Range(0, 1);
-        perkType = 2;
+        perkType = 3;
         switch (perkType)
         {
             case 0:
@@ -29,6 +29,9 @@ public class PerkBehaviour : MonoBehaviour
                 break;
             case 2:
                 anim.SetBool("isLaser", true);
+                break;
+            case 3:
+                anim.SetBool("isPulse", true);
                 break;
         }
     }
@@ -53,6 +56,9 @@ public class PerkBehaviour : MonoBehaviour
             } else if (perkType == 2)
             {
                 WeaponController.weaponMode = 3;
+            } else if (perkType == 3)
+            {
+                WeaponController.weaponMode = 4;
             }
             perkCollider.enabled = false;
             Destroy(gameObject);
