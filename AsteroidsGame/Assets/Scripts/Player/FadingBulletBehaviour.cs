@@ -12,7 +12,7 @@ public class FadingBulletBehaviour : MonoBehaviour
     {
         bulletRigid = GetComponent<Rigidbody2D>();
         bulletRigid.velocity = transform.up * (bulletVelocity + GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetVelocity);
-        Invoke("TimedDestroy", 0.8f);
+        Invoke("TimedDestroy", 0.5f);
     }
 
     void Update()

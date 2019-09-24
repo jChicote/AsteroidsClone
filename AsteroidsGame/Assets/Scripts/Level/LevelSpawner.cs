@@ -11,6 +11,7 @@ public class LevelSpawner : MonoBehaviour
     public GameObject largeAlienFab;
     public GameObject smallAlienFab;
     public GameObject playerPrefab;
+    public GameObject perkPowerUp;
 
     Camera cam;
     float camDistance;
@@ -21,6 +22,8 @@ public class LevelSpawner : MonoBehaviour
     float rightLimit = Screen.width;
     float bottomLimit = Screen.height;
     float topLimit = Screen.height;
+
+    private bool perkActive = false;
 
     void Start()
     {
@@ -37,6 +40,7 @@ public class LevelSpawner : MonoBehaviour
 
         //Spawn alien after every 7 seconds
         InvokeRepeating("SpawnAlien", 7f, 7f);
+        InvokeRepeating("SpawnPowerUp", 20f, 20f);
     }
 
     // Update is called once per frame
@@ -85,6 +89,15 @@ public class LevelSpawner : MonoBehaviour
                 Debug.Log("Small Alien Spawned)");
                 Instantiate(smallAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
             }
+        }
+    }
+
+    private void SpawnPowerUp()
+    {
+        if (perkActive == false)
+        {
+            Instantiate(perkPowerUp, new Vector2(Random.Range(leftLimit, rightLimit), Random.Range(topLimit, bottomLimit)), Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            perkActive = true;
         }
     }
 }

@@ -12,11 +12,14 @@ public class WeaponController : MonoBehaviour
     //child transform object
     public GameObject bulletLocation;
     public GameObject normalBullet;
+    public GameObject powerBullet;
     public GameObject fadingBullet;
     public GameObject laserFire;
-    public GameObject trackingBullet;
+    public GameObject pulseScatterFire;
 
     Transform firingPos;
+
+    private int pulseCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +31,26 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKey("space"))
         {
-            CheckMode();
+            if (Input.GetKeyDown("space"))
+            {
+                CheckMode();
+            } else if (weaponMode == 3)
+            {
+                //keep true
+                laserBeam.isHeld = true;
+            }
+        } else if(Input.GetKeyUp("space"))
+        {
+            //set to false
+            laserBeam.isHeld = false;
         }
+    }
+
+    public GameObject GetWeaponLoc
+    {
+        get { return bulletLocation; }
     }
 
     void CheckMode()
@@ -50,9 +69,22 @@ public class WeaponController : MonoBehaviour
                 break;
             case 2:
                 Debug.Log("On Triple Fire");
-                Instantiate(normalBullet, firingPos.position, firingPos.rotation);
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
-                Instantiate(normalBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
+                Instantiate(powerBullet, firingPos.position, firingPos.rotation);
+                Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
+                Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
+                break;
+            case 3:
+                Debug.Log("On Laser Fire");
+                Instantiate(laserFire, firingPos.position, firingPos.rotation);
+                break;
+            case 4:
+                Debug.Log("Pulse Scatter Fire");
+                pulseCount = GameObject.FindGameObjectsWithTag("bullet").Length;
+                Debug.Log(pulseCount);
+                if (pulseCount < 6)
+                {
+                    Instantiate(pulseScatterFire, firingPos.position, firingPos.rotation);
+                }
                 break;
         }
     }

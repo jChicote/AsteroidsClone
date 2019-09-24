@@ -159,10 +159,14 @@ MonoBehaviour:
   bulletLocation: {fileID: 460957022921138362}
   normalBullet: {fileID: 6241584436116114207, guid: 218b0e282a4f444c5b62c2d41348adfa,
     type: 3}
+  powerBullet: {fileID: 796259985920373448, guid: 7fe585800ac7d48deb494fa6e00fda6d,
+    type: 3}
   fadingBullet: {fileID: 5195592233647780088, guid: 811c2f25a8aa545a9a18bd12ff050563,
     type: 3}
-  laserFire: {fileID: 0}
-  trackingBullet: {fileID: 0}
+  laserFire: {fileID: 6725029556630904587, guid: 0ee0f89b1df1b4ca1a42f335fef7da2e,
+    type: 3}
+  pulseScatterFire: {fileID: 2631056769563650191, guid: d532f76bbd1604433ac79f78df732770,
+    type: 3}
 --- !u!95 &460957022511056568
 Animator:
   serializedVersion: 3
