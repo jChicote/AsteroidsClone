@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PerkBehaviour : MonoBehaviour
 {
+    public GameObject weaponLock;
+
     private Animator anim;
     private Collider2D perkCollider;
     private float speed = 10f;
@@ -17,8 +19,8 @@ public class PerkBehaviour : MonoBehaviour
         if (Random.Range(0, 10) > 5) speed *= -1;
         vertForce = Random.Range(-10, 10);
 
-        //perkType = Random.Range(0, 1);
-        perkType = 3;
+        perkType = Random.Range(0, 3);
+        //perkType = 3;
         switch (perkType)
         {
             case 0:
@@ -39,8 +41,8 @@ public class PerkBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * speed * Time.deltaTime;
-        transform.position += new Vector3(0, vertForce * Time.deltaTime, 0);
+        transform.position += transform.up * speed * Time.deltaTime;
+        //transform.position += new Vector3(0, vertForce * Time.deltaTime, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,6 +61,7 @@ public class PerkBehaviour : MonoBehaviour
             } else if (perkType == 3)
             {
                 WeaponController.weaponMode = 4;
+                Instantiate(weaponLock, new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10), Quaternion.identity);
             }
             perkCollider.enabled = false;
             Destroy(gameObject);

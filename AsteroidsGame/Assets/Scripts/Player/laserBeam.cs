@@ -13,7 +13,7 @@ public class laserBeam : MonoBehaviour
     GameObject laserStart;
 
     private Collider2D laserCollider;
-    private float batteryPower = 100f;
+    //private float batteryPower = 100f;
     private float hitDistance;
     private bool isReleased = false;
     private Animator anim;

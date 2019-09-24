@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Alien\EnemyBulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Alien\LargeAlienBehaviour.cs" />
     <Compile Include="Assets\Scripts\Alien\SmallAlienBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Alien\SpecialBossBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\LargeAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\SmallAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Level\GameStateManager.cs" />
