@@ -1,39 +1,37 @@
-﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/FadingBulletBehaviour.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Alien/BossEMPBehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="52" Column="45" />
+      <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="60" Column="1" />
       <File FileName="Assets/Scripts/Player/PlayerController.cs" />
       <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" />
       <File FileName="Assets/Scripts/PowerUp/PerkBehaviour.cs" />
       <File FileName="Assets/Scripts/Alien/LargeAlienBehaviour.cs" />
       <File FileName="Assets/Scripts/Alien/SmallAlienBehaviour.cs" />
-      <File FileName="Assets/Scripts/Player/BulletBehaviour.cs" Line="5" Column="45" />
-      <File FileName="Assets/Scripts/Level/LevelSpawner.cs" />
-      <File FileName="Assets/Scripts/Player/FadingBulletBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/BulletBehaviour.cs" />
+      <File FileName="Assets/Scripts/Level/LevelSpawner.cs" Line="139" Column="1" />
+      <File FileName="Assets/Scripts/Player/FadingBulletBehaviour.cs" />
+      <File FileName="Assets/Scripts/Player/powerFulBullet.cs" />
+      <File FileName="Assets/Scripts/Player/RicochetBehaviour.cs" />
+      <File FileName="Assets/Scripts/Player/PointerBehaviour.cs" />
+      <File FileName="Assets/Scripts/Level/ScreenWrapping.cs" />
+      <File FileName="Assets/Scripts/Asteroids/SmallAsteroidBehaviour.cs" />
+      <File FileName="Assets/Scripts/PowerUp/PulseBulletBehaviour.cs" Line="78" Column="1" />
+      <File FileName="Assets/Scripts/Alien/SpecialBossBehaviour.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/Level/ScreenJitter.cs" Line="83" Column="1" />
+      <File FileName="Assets/Scripts/Alien/BossBulletBehaviour.cs" Line="70" Column="1" />
+      <File FileName="Assets/Scripts/Alien/EnemyBulletBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Alien/BossEMPBehaviour.cs" Line="72" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="AsteroidsGame" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Alien" expanded="True" />
-                <Node name="Asteroids" expanded="True" />
-                <Node name="Level" expanded="True" />
-                <Node name="Player" expanded="True">
-                  <Node name="FadingBulletBehaviour.cs" selected="True" />
-                </Node>
-                <Node name="PowerUp" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="AsteroidsGame" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f07d3031-c8c2-4ecd-b2b9-5a997bd27d07" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -60,14 +60,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Alien\BossBulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Alien\BossEMPBehaviour.cs" />
     <Compile Include="Assets\Scripts\Alien\EnemyBulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Alien\LargeAlienBehaviour.cs" />
     <Compile Include="Assets\Scripts\Alien\SmallAlienBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Alien\SpecialBossBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\LargeAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\SmallAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Level\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Level\LevelSpawner.cs" />
     <Compile Include="Assets\Scripts\Level\PointsController.cs" />
+    <Compile Include="Assets\Scripts\Level\ScreenJitter.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenWrapping.cs" />
     <Compile Include="Assets\Scripts\Player\BulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\FadingBulletBehaviour.cs" />
@@ -75,6 +79,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerLifes.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
     <Compile Include="Assets\Scripts\PowerUp\PerkBehaviour.cs" />
+    <Compile Include="Assets\Scripts\PowerUp\PulseBulletBehaviour.cs" />
+    <None Include="Assets\Shader\ScreenJittering.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

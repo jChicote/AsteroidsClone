@@ -22,10 +22,17 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 677
+<<<<<<< Updated upstream
   m_MinSize: {x: 709, y: 474}
   m_MaxSize: {x: 18006, y: 14024}
   vertical: 0
   controlID: 49460
+=======
+  m_MinSize: {x: 713, y: 548}
+  m_MaxSize: {x: 18008, y: 14048}
+  vertical: 0
+  controlID: 17767
+>>>>>>> Stashed changes
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,10 +135,17 @@ MonoBehaviour:
     y: 0
     width: 769
     height: 677
+<<<<<<< Updated upstream
   m_MinSize: {x: 200, y: 424}
   m_MaxSize: {x: 4002, y: 12024}
   vertical: 1
   controlID: 49461
+=======
+  m_MinSize: {x: 202, y: 548}
+  m_MaxSize: {x: 4002, y: 12048}
+  vertical: 1
+  controlID: 17768
+>>>>>>> Stashed changes
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,14 +201,20 @@ MonoBehaviour:
     height: 204
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 5c867aa48fb2f4a0a923e32429bf62d1
-  m_SceneLighting: 1
+  m_SceneLighting: 0
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 0.17334288, y: 0.2565216, z: -20.243542}
     speed: 2
     m_Value: {x: 0.17334288, y: 0.2565216, z: -20.243542}
+=======
+    m_Target: {x: 0, y: 3.01, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 3.01, z: 0}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -226,9 +246,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 1.1845111
     speed: 2
     m_Value: 1.1845111
+=======
+    m_Target: 3.7480793
+    speed: 2
+    m_Value: 3.7480793
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -274,7 +300,13 @@ MonoBehaviour:
     - {fileID: 1107533936920001446, guid: 2d74de0bc759747d2b8011de91ca37a8, type: 2}
     - {fileID: 1107744019556725744, guid: 2960fe2c748c94c409bb60342dcc3c0a, type: 2}
     - {fileID: 1107511596543046774, guid: d0049b69096734374a55348b548876cd, type: 2}
+<<<<<<< Updated upstream
     - {fileID: 1107399425472508574, guid: 8ea7bac0b42d44572aca6471bd15b6d1, type: 2}
+=======
+    - {fileID: 1107681417880272420, guid: 19f6eb80124d04c67a2e72a22386e7c2, type: 2}
+    - {fileID: 1107513325110266182, guid: 7c314ecb237944ebf8ec7f74e974135b, type: 2}
+    - {fileID: 1107545154463512406, guid: 248a8c964cb954fc3acf9e90d207d411, type: 2}
+>>>>>>> Stashed changes
     m_ValueSerializationHelper:
     - e00: 0.45578948
       e01: 0
@@ -340,14 +372,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.45578948
+    - e00: 0.6377857
       e01: 0
       e02: 0
-      e03: -7.7894745
+      e03: 63.02529
       e10: 0
-      e11: 0.45578948
+      e11: 0.6377857
       e12: 0
-      e13: 41.02316
+      e13: 27.166069
       e20: 0
       e21: 0
       e22: 1
@@ -388,11 +420,50 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.45578948
+      e01: 0
+      e02: 0
+      e03: -7.7894745
+      e10: 0
+      e11: 0.45578948
+      e12: 0
+      e13: 43.757893
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.45578948
+      e01: 0
+      e02: 0
+      e03: -7.7894745
+      e10: 0
+      e11: 0.45578948
+      e12: 0
+      e13: 39.2
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
+<<<<<<< Updated upstream
   m_AnimatorController: {fileID: 9100000, guid: d0049b69096734374a55348b548876cd,
     type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: 1107511596543046774, guid: d0049b69096734374a55348b548876cd,
+=======
+  m_AnimatorController: {fileID: 9100000, guid: 248a8c964cb954fc3acf9e90d207d411,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 1107545154463512406, guid: 248a8c964cb954fc3acf9e90d207d411,
+>>>>>>> Stashed changes
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -539,7 +610,11 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< Updated upstream
   m_LastSelectedObjectID: 59548
+=======
+  m_LastSelectedObjectID: 25778
+>>>>>>> Stashed changes
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -564,7 +639,11 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 474}
   m_MaxSize: {x: 10004, y: 14024}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 49409
+=======
+  controlID: 17935
+>>>>>>> Stashed changes
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -584,8 +663,13 @@ MonoBehaviour:
     y: 0
     width: 234
     height: 320
+<<<<<<< Updated upstream
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -620,9 +704,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: ee08feff
       m_LastClickedID: -128786
       m_ExpandedIDs: aae9ffff14f5ffffd4fbffffd6fbffff5a290000
+=======
+      m_SelectedIDs: b2640000
+      m_LastClickedID: 25778
+      m_ExpandedIDs: 
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -710,20 +800,35 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< Updated upstream
     - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
   - Assets/Materials
+=======
+    - Assets/Prefab
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Prefab
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/jaidenchicote/Documents/GitHub/AsteroidsGame/AsteroidsClone/AsteroidsGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b2280000
     m_LastClickedID: 10418
     m_ExpandedIDs: 000000001e2600005626000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 84}
+    m_SelectedIDs: c4260000
+    m_LastClickedID: 9924
+    m_ExpandedIDs: 000000003a260000802600004628000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -776,10 +881,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< Updated upstream
     m_SelectedInstanceIDs: ee08feff
     m_LastClickedInstanceID: -128786
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 0c320000423200007a2b00003e470000c09a0000
+=======
+    m_SelectedInstanceIDs: b2640000
+    m_LastClickedInstanceID: 25778
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 0c320000423200007a2b00003e470000c09a000020a0feffba8400009e910000ba2d00003c2c000010550000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -795,7 +907,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 15}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0

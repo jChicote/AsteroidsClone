@@ -5,12 +5,25 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour
 {
     public static bool playerIsLost = false;
+    public static bool isJitting = false;
 
     public GameObject[] largeAsteroids;
     public GameObject asteroidPrefab;
     public GameObject largeAlienFab;
     public GameObject smallAlienFab;
     public GameObject playerPrefab;
+<<<<<<< Updated upstream
+=======
+    public GameObject perkPowerUp;
+    public ScreenJitter jitter;
+
+    public float jitVal = 0.2f;
+    public float minJit = 0.0f;
+    public float maxScreenJit = 0.2f;
+    public float maxHoriJit = 0.2f;
+    public float maxcoloraAb = 0.2f;
+    public float timer = 2f;
+>>>>>>> Stashed changes
 
     Camera cam;
     float camDistance;
@@ -25,6 +38,7 @@ public class LevelSpawner : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        jitter = cam.GetComponent<ScreenJitter>();
 
         //Calculates the positiion of the camera relative to the game object
         camDistance = Mathf.Abs(cam.transform.position.z + transform.position.z);
@@ -59,6 +73,7 @@ public class LevelSpawner : MonoBehaviour
                 SpawnPlayer();
             }
         }
+        JitterController();
     }
 
     private void SpawnAsteroids()
@@ -87,4 +102,37 @@ public class LevelSpawner : MonoBehaviour
             }
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    private void SpawnPowerUp()
+    {
+        if (perkActive == false)
+        {
+            Instantiate(perkPowerUp, new Vector2(Random.Range(leftLimit, rightLimit), Random.Range(topLimit, bottomLimit)), Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            perkActive = true;
+        }
+    }
+
+    private void JitterController()
+    {
+        if (isJitting == true)
+        {
+            jitter.scanLineJitter = maxScreenJit;
+            jitter.horizontalJitter = maxHoriJit;
+            jitter.colorAberrate = maxcoloraAb;
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                isJitting = false;
+                timer = 2f;
+            }
+        } else
+        {
+            jitter.scanLineJitter = Mathf.Clamp(jitter.scanLineJitter - jitVal * Time.deltaTime, minJit, maxScreenJit);
+            jitter.horizontalJitter = Mathf.Clamp(jitter.horizontalJitter - jitVal * Time.deltaTime, minJit, maxHoriJit);
+            jitter.colorAberrate = Mathf.Clamp(jitter.colorAberrate - jitVal * Time.deltaTime, minJit, maxcoloraAb);
+        }
+    }
+>>>>>>> Stashed changes
 }
