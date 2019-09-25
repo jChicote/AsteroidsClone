@@ -5,15 +5,24 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour
 {
     public static bool playerIsLost = false;
+	public static bool isJitting = false;
 
-    public GameObject[] largeAsteroids;
+	public GameObject[] largeAsteroids;
     public GameObject asteroidPrefab;
     public GameObject largeAlienFab;
     public GameObject smallAlienFab;
     public GameObject playerPrefab;
     public GameObject perkPowerUp;
+	public ScreenJitter jitter;
 
-    Camera cam;
+	public float jitVal = 0.2f;
+	public float minJit = 0.0f;
+	public float maxScreenJit = 0.6f;
+	public float maxHoriJit = 0.1f;
+	public float maxcoloraAb = 0.1f;
+	public float timer = 6f;
+
+	Camera cam;
     float camDistance;
     readonly float buffer = 0.4f;
     int amount;
@@ -63,7 +72,8 @@ public class LevelSpawner : MonoBehaviour
                 SpawnPlayer();
             }
         }
-    }
+		JitterController();
+	}
 
     private void SpawnAsteroids()
     {
@@ -100,4 +110,26 @@ public class LevelSpawner : MonoBehaviour
             perkActive = true;
         }
     }
+
+	private void JitterController()
+	{
+		if (isJitting == true)
+		{
+			jitter.scanLineJitter = maxScreenJit;
+			jitter.horizontalJitter = maxHoriJit;
+			jitter.colorAberrate = maxcoloraAb;
+			timer -= Time.deltaTime;
+			if (timer <= 0)
+			{
+				isJitting = false;
+				timer = 6f;
+			}
+		}
+		else
+		{
+			jitter.scanLineJitter = Mathf.Clamp(jitter.scanLineJitter - jitVal * Time.deltaTime, minJit, maxScreenJit);
+			jitter.horizontalJitter = Mathf.Clamp(jitter.horizontalJitter - jitVal * Time.deltaTime, minJit, maxHoriJit);
+			jitter.colorAberrate = Mathf.Clamp(jitter.colorAberrate - jitVal * Time.deltaTime, minJit, maxcoloraAb);
+		}
+	}
 }
