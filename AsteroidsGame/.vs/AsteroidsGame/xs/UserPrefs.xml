@@ -18,7 +18,6 @@
       <File FileName="Assets/Scripts/PowerUp/PulseBulletBehaviour.cs" Line="78" Column="1" />
       <File FileName="Assets/Scripts/Alien/SpecialBossBehaviour.cs" Line="32" Column="1" />
       <File FileName="Assets/Scripts/Level/ScreenJitter.cs" Line="83" Column="1" />
-      <File FileName="Assets/Scripts/Alien/BossBulletBehaviour.cs" Line="70" Column="1" />
       <File FileName="Assets/Scripts/Alien/EnemyBulletBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Alien/BossEMPBehaviour.cs" Line="72" Column="1" />
     </Files>
