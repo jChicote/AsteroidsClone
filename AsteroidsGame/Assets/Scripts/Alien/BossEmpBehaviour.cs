@@ -26,7 +26,7 @@ public class BossEmpBehaviour : MonoBehaviour
             Vector3 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg * -1;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * 2f);
-            Debug.Log("Checking");
+            //Debug.Log("Checking");
         }
         totalVel = (!playerDestroyed) ? Mathf.Clamp(totalVel + 0.05f, 0.0f, maxVel) : Mathf.Clamp(totalVel - 0.05f, 0.0f, maxVel);
         transform.position += transform.up * totalVel * Time.deltaTime;

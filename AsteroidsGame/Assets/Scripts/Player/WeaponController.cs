@@ -58,29 +58,29 @@ public class WeaponController : MonoBehaviour
         switch (weaponMode)
         {
             case 0:
-                Debug.Log("On Single Fire");
+                //Debug.Log("On Single Fire");
                 weaponAudio.PlayOneShot(classicBullet, 1);
                 Instantiate(normalBullet, firingPos.position, firingPos.rotation);
                 break;
             case 1:
-                Debug.Log("On Double Fire");
+                //Debug.Log("On Double Fire");
                 Instantiate(fadingBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 45f));
                 Instantiate(fadingBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 45f));
                 break;
             case 2:
-                Debug.Log("On Triple Fire");
+                //Debug.Log("On Triple Fire");
                 Instantiate(powerBullet, firingPos.position, firingPos.rotation);
                 Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 35f));
                 Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
                 break;
             case 3:
-                Debug.Log("On Laser Fire");
+                //Debug.Log("On Laser Fire");
                 Instantiate(laserFire, firingPos.position, firingPos.rotation);
                 break;
             case 4:
-                Debug.Log("Pulse Scatter Fire");
+                //Debug.Log("Pulse Scatter Fire");
                 pulseCount = GameObject.FindGameObjectsWithTag("bullet").Length;
-                Debug.Log(pulseCount);
+                //Debug.Log(pulseCount);
                 if (pulseCount < 6)
                 {
                     Instantiate(pulseScatterFire, firingPos.position, firingPos.rotation);

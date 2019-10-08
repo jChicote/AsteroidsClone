@@ -27,10 +27,10 @@ public class LevelSpawner : MonoBehaviour
     readonly float buffer = 0.4f;
     int amount;
 
-    float leftLimit = Screen.width;
-    float rightLimit = Screen.width;
-    float bottomLimit = Screen.height;
-    float topLimit = Screen.height;
+    public static float leftLimit = Screen.width;
+    public static float rightLimit = Screen.width;
+    public static float bottomLimit = Screen.height;
+    public static float topLimit = Screen.height;
 
     private bool perkActive = false;
 
