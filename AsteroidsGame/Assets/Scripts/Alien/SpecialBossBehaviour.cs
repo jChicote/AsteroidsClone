@@ -13,6 +13,9 @@ public class SpecialBossBehaviour : MonoBehaviour
     public Material mat1;
     public Material mat2;
     public SpriteRenderer rend;
+    public Animator anim;
+    public AudioSource bossAudio;
+    public AudioClip bossClip;
 
     private Vector3 newPosition;
     private Vector3 oldPosition;
@@ -20,19 +23,16 @@ public class SpecialBossBehaviour : MonoBehaviour
     private float duration = 0.2f;
     private float totalHealth = 100;
     private float initialBarLength;
-    //private float initialHealth;
-    /*private float maximum = 10f;
-    private float minimum = 0f;
-    private float lerpVal = 0f;
-    private float constant = 0.5f;*/
 
     // Start is called before the first frame update
     void Start()
     {
+        bossAudio = GameObject.Find("WeaponAudioSource").GetComponent<AudioSource>();
         InvokeRepeating("BlastFire", 2f, 8f);
         InvokeRepeating("NewMovePosition", 1f, 3f);
         rend = GetComponent<SpriteRenderer>();
         initialBarLength = healthBar.transform.localScale.x;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,6 @@ public class SpecialBossBehaviour : MonoBehaviour
         {
             float lerp = Mathf.PingPong(Time.time, duration) / duration;
             rend.material.Lerp(mat1, mat2, lerp);
-            Debug.Log(totalHealth);
         }
     }
 
@@ -76,31 +75,31 @@ public class SpecialBossBehaviour : MonoBehaviour
                 case "powerBullet(Clone)":
                     totalHealth -= 8;
                     break;
-                case "laserFieBeam":
+                case "laserFieBeam(Clone)":
                     totalHealth -= 1;
                     break;
                 case "PulseScatterBullet(Clone)":
                     totalHealth -= 20;
                     break;
             }
-
-            Debug.Log(healthBar.transform.localScale.x * (totalHealth / 100));
-            Debug.Log(totalHealth);
             healthBar.transform.localScale = new Vector3(initialBarLength * (totalHealth / 100), healthBar.transform.localScale.y);
             if (totalHealth <= 0)
             {
-                Destroy(gameObject);
+                anim.SetBool("isDestroyed", true);
+                GetComponent<Collider2D>().enabled = false;
+                bossAudio.PlayOneShot(bossClip, 1);
+                Destroy(gameObject, 1f);
             }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "tag")
+        if (collision.tag == "bullet")
         {
-            if(collision.gameObject.name == "laserFireBeam")
+            if(collision.gameObject.name == "laserFireBeam(Clone)")
             {
-                totalHealth -= 1;
+                totalHealth -= 20 * Time.deltaTime;
             }
         }
     }

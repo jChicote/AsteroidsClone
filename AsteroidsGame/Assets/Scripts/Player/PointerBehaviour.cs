@@ -23,6 +23,8 @@ public class PointerBehaviour : MonoBehaviour
         //Get the raycast information based on the location of the mouse
         RaycastHit2D objInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
+        if (WeaponController.weaponMode != 4) Destroy(gameObject);
+
         //checks and run whether an object is selected
         if (targetLock == false)
         {

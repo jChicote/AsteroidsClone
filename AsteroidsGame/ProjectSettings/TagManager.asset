@@ -12,6 +12,9 @@ TagManager:
   - perk
   - AlienEMP
   - allowPass
+  - PlayerAudio
+  - BGAudio
+  - EnemyAudio
   layers:
   - Default
   - TransparentFX

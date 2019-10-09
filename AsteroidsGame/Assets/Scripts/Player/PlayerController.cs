@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (GameStateManager.isPaused == false && playerLost == false)
+        if (UIManager.isPaused == false && playerLost == false)
         {
             CheckFire();
 

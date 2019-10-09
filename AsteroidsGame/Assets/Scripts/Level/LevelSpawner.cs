@@ -7,13 +7,17 @@ public class LevelSpawner : MonoBehaviour
     public static bool playerIsLost = false;
 	public static bool isJitting = false;
 
-	public GameObject[] largeAsteroids;
+    public GameObject[] largeAsteroids;
     public GameObject asteroidPrefab;
     public GameObject largeAlienFab;
     public GameObject smallAlienFab;
+    public GameObject bossAlienFab;
     public GameObject playerPrefab;
     public GameObject perkPowerUp;
 	public ScreenJitter jitter;
+
+    public AudioSource staticAudioSource;
+    public AudioClip staticClip;
 
 	public float jitVal = 0.2f;
 	public float minJit = 0.0f;
@@ -33,9 +37,11 @@ public class LevelSpawner : MonoBehaviour
     public static float topLimit = Screen.height;
 
     private bool perkActive = false;
+    private bool isStatic = false;
 
     void Start()
     {
+        staticAudioSource = GameObject.Find("StaticAudioSource").GetComponent<AudioSource>();
         cam = Camera.main;
 
         //Calculates the positiion of the camera relative to the game object
@@ -47,9 +53,10 @@ public class LevelSpawner : MonoBehaviour
         bottomLimit = cam.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, camDistance)).y;
         topLimit = cam.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, camDistance)).y;
 
-        //Spawn alien after every 7 seconds
+        //Spawn something
         InvokeRepeating("SpawnAlien", 7f, 7f);
         InvokeRepeating("SpawnPowerUp", 20f, 20f);
+        InvokeRepeating("SpawnBoss", 30f, 40f);
     }
 
     // Update is called once per frame
@@ -59,7 +66,6 @@ public class LevelSpawner : MonoBehaviour
         {
             largeAsteroids = GameObject.FindGameObjectsWithTag("LargeAsteroid");
             amount = largeAsteroids.Length;
-
             if (amount != 3 && amount <= 3)
             {
                 SpawnAsteroids();
@@ -97,7 +103,7 @@ public class LevelSpawner : MonoBehaviour
             } else
             {
                 Debug.Log("Small Alien Spawned)");
-                Instantiate(smallAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
+                Instantiate(bossAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
             }
         }
     }
@@ -111,11 +117,24 @@ public class LevelSpawner : MonoBehaviour
         }
     }
 
+    private void SpawnBoss()
+    {
+        Instantiate(perkPowerUp, new Vector2(Random.Range(leftLimit, rightLimit), Random.Range(topLimit, bottomLimit)), Quaternion.identity);
+    }
+
 	private void JitterController()
 	{
 		if (isJitting == true)
-		{
-			jitter.scanLineJitter = maxScreenJit;
+        {
+            if (isStatic == false)
+            {
+                Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                staticAudioSource.Play();
+                staticAudioSource.volume = 1f;
+                Debug.Log(staticAudioSource.volume);
+                isStatic = true;
+            }
+            jitter.scanLineJitter = maxScreenJit;
 			jitter.horizontalJitter = maxHoriJit;
 			jitter.colorAberrate = maxcoloraAb;
 			timer -= Time.deltaTime;
@@ -127,9 +146,22 @@ public class LevelSpawner : MonoBehaviour
 		}
 		else
 		{
-			jitter.scanLineJitter = Mathf.Clamp(jitter.scanLineJitter - jitVal * Time.deltaTime, minJit, maxScreenJit);
+            StaticFadeOut();
+            jitter.scanLineJitter = Mathf.Clamp(jitter.scanLineJitter - jitVal * Time.deltaTime, minJit, maxScreenJit);
 			jitter.horizontalJitter = Mathf.Clamp(jitter.horizontalJitter - jitVal * Time.deltaTime, minJit, maxHoriJit);
 			jitter.colorAberrate = Mathf.Clamp(jitter.colorAberrate - jitVal * Time.deltaTime, minJit, maxcoloraAb);
 		}
 	}
+
+    private void StaticFadeOut()
+    {
+        if (staticAudioSource.volume > 0)
+        {
+            staticAudioSource.volume -= 0.3f * Time.deltaTime;
+        } else if (staticAudioSource.volume <= 0)
+        {
+            staticAudioSource.Stop();
+            isStatic = false;
+        }
+    }
 }

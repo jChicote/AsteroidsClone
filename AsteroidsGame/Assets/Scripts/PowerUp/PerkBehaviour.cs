@@ -5,6 +5,8 @@ using UnityEngine;
 public class PerkBehaviour : MonoBehaviour
 {
     public GameObject weaponLock;
+    public AudioSource perkAudio;
+    public AudioClip perkClip;
 
     private Animator anim;
     private Collider2D perkCollider;
@@ -14,13 +16,14 @@ public class PerkBehaviour : MonoBehaviour
 
     void Start()
     {
+        perkAudio = GameObject.FindGameObjectWithTag("PlayerAudio").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         perkCollider = GetComponent<Collider2D>();
         if (Random.Range(0, 10) > 5) speed *= -1;
         vertForce = Random.Range(-10, 10);
 
-        perkType = Random.Range(0, 3);
-        //perkType = 3;
+        perkType = Random.Range(0, 4);
+        //perkType = 2;
         switch (perkType)
         {
             case 0:
@@ -47,6 +50,7 @@ public class PerkBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        perkAudio.PlayOneShot(perkClip, 0.5f);
         if (collision.gameObject.tag == "bullet" || collision.gameObject.tag == "Player")
         {
             if (perkType == 0)

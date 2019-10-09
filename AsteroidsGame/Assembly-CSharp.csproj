@@ -68,11 +68,11 @@
     <Compile Include="Assets\Scripts\Alien\SpecialBossBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\LargeAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\SmallAsteroidBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Level\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Level\LevelSpawner.cs" />
     <Compile Include="Assets\Scripts\Level\PointsController.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenJitter.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenWrapping.cs" />
+    <Compile Include="Assets\Scripts\Level\UIManager.cs" />
     <Compile Include="Assets\Scripts\Player\BulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\FadingBulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\laserBeam.cs" />

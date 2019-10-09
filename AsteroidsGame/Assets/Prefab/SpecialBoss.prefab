@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8804745411794075926}
   - component: {fileID: 6125627257019469837}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GreenBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8350009503894389734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 382979040222544456}
   - component: {fileID: 1373928311972215552}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RedBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,9 +204,9 @@ GameObject:
   - component: {fileID: 8083899881266536811}
   - component: {fileID: 8083899881266536808}
   - component: {fileID: 8083899881266536791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpecialBoss
-  m_TagString: Untagged
+  m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,6 +383,9 @@ MonoBehaviour:
   mat1: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   mat2: {fileID: 2100000, guid: a8e5de32c95b14505bb17733b6c01377, type: 2}
   rend: {fileID: 8083899881266536789}
+  anim: {fileID: 8083899881266536808}
+  bossAudio: {fileID: 0}
+  bossClip: {fileID: 8300000, guid: 9be97f3aaa80d4881a47a91045b7f19c, type: 3}
 --- !u!1 &8083899881818193347
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8083899881818193346}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8083899882156829703}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ForwardGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8083899882382109442}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

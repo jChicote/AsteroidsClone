@@ -43,7 +43,6 @@ public class laserBeam : MonoBehaviour
                 /*take note the rendering distance of the middle laser is independant from raycast distance due to
                 the pixel per unit controlling underlying sizing.*/
                 hitDistance = ray.distance * 3f;
-
                 if (ray.collider != null)
                 {
                     transform.localScale = new Vector3(1, hitDistance, 1);
@@ -63,7 +62,7 @@ public class laserBeam : MonoBehaviour
                     transform.position = new Vector3(firingPos.position.x, firingPos.position.y, 0);
                     transform.rotation = firingPos.rotation;
 
-                    //Debug.DrawRay(firingPos.transform.position, firingPos.transform.up * 30, Color.yellow, 4.0f);
+                    Debug.DrawRay(firingPos.transform.position, firingPos.transform.up * 30, Color.yellow, 4.0f);
                 }
 
             }
