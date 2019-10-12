@@ -14,7 +14,6 @@ public class PointerBehaviour : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        Cursor.visible = false;
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
     }
 

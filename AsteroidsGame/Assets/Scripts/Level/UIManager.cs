@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -32,10 +33,30 @@ public class UIManager : MonoBehaviour
         isPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseUI.SetActive(true);
         Time.timeScale = 0.0f;
         isPaused = true;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        pauseUI.SetActive(false);
+        Time.timeScale = 1.0f;
+        isPaused = false;
+        PointsController.points = 0;
+        LevelSpawner.playerIsLost = false;
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene("Menu");
+        pauseUI.SetActive(false);
+        Time.timeScale = 1.0f;
+        isPaused = false;
+        PointsController.points = 0;
+        LevelSpawner.playerIsLost = false;
     }
 }

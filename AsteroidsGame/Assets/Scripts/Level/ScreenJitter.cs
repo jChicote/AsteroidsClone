@@ -7,6 +7,14 @@
 
 public class ScreenJitter : MonoBehaviour
 {
+    #region Private Properties
+
+    public Shader shader;
+    private Material material;
+    //float verticalJumpTime;
+
+    #endregion
+
     //region organisers
     #region Public Properties
 
@@ -45,37 +53,27 @@ public class ScreenJitter : MonoBehaviour
 
     #endregion
 
-    #region Private Properties
-
-    [SerializeField] Shader _shader;
-
-    Material _material;
-
-    float _verticalJumpTime;
-
-    #endregion
-
     #region MonoBehaviour Functions
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        if (_material == null)
+        if (material == null)
         {
-            _material = new Material(_shader);
-            _material.hideFlags = HideFlags.DontSave;
+            material = new Material(shader);
+            material.hideFlags = HideFlags.DontSave;
         }
 
         var sl_thresh = Mathf.Clamp01(1.0f - _scanLineJitter * 1.2f);
         var sl_disp = 0.002f + Mathf.Pow(_scanLineJitter, 3) * 0.05f;
-        _material.SetVector("_ScanLineJitter", new Vector2(sl_disp, sl_thresh));
+        material.SetVector("_ScanLineJitter", new Vector2(sl_disp, sl_thresh));
 
 
-        _material.SetFloat("_HorizontalShake", _horizontalJitter * 0.2f);
+        material.SetFloat("_HorizontalShake", _horizontalJitter * 0.2f);
 
         var cd = new Vector2(_colorAberration * 0.04f, Time.time * 606.11f);
-        _material.SetVector("_ColorAberration", cd);
+        material.SetVector("_ColorAberration", cd);
 
-        Graphics.Blit(source, destination, _material);
+        Graphics.Blit(source, destination, material);
     }
 
     #endregion

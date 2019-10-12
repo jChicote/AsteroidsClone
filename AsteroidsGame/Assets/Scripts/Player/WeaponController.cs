@@ -69,20 +69,20 @@ public class WeaponController : MonoBehaviour
         switch (weaponMode)
         {
             case 0:
-                //Debug.Log("On Single Fire");
+                Cursor.visible = true;
                 weaponAudio.clip = null;
                 weaponAudio.PlayOneShot(classicBullet, 1);
                 Instantiate(normalBullet, firingPos.position, firingPos.rotation);
                 break;
             case 1:
-                //Debug.Log("On Double Fire");
+                Cursor.visible = true;
                 weaponAudio.clip = null;
                 weaponAudio.PlayOneShot(doubleAudio, 1);
                 Instantiate(fadingBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z - 45f));
                 Instantiate(fadingBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 45f));
                 break;
             case 2:
-                //Debug.Log("On Triple Fire");
+                Cursor.visible = true;
                 weaponAudio.clip = null;
                 weaponAudio.PlayOneShot(tripleAudio, 1);
                 Instantiate(powerBullet, firingPos.position, firingPos.rotation);
@@ -90,17 +90,16 @@ public class WeaponController : MonoBehaviour
                 Instantiate(powerBullet, firingPos.position, Quaternion.Euler(0, 0, firingPos.eulerAngles.z + 35f));
                 break;
             case 3:
-                //Debug.Log("On Laser Fire");
                 //weaponAudio.PlayOneShot(classicBullet, 1);
+                Cursor.visible = true;
                 weaponAudio.clip = laserAudio;
                 weaponAudio.loop = true;
                 weaponAudio.Play();
-                Debug.Log(weaponAudio.clip);
                 Instantiate(laserFire, firingPos.position, firingPos.rotation);
                 break;
             case 4:
-                //Debug.Log("Pulse Scatter Fire");
                 weaponAudio.clip = null;
+                Cursor.visible = false;
                 pulseCount = GameObject.FindGameObjectsWithTag("bullet").Length;
                 //Debug.Log(pulseCount);
                 if (pulseCount < 6)

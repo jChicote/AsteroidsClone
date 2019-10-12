@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject bullet;
     public float thrustPower = 10f;
     public AudioSource playerAudio;
+    public AudioSource weaponAudio;
     public AudioClip playerThust;
     //public AudioClip playerShot;
     public AudioClip playerExplosion;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerAudio = GameObject.Find("PlayerAudioSource").GetComponent<AudioSource>();
+        weaponAudio = GameObject.Find("WeaponAudioSource").GetComponent<AudioSource>();
 
         rb = GetComponent<Rigidbody2D>();
         firingPos = bullLoc.GetComponent<Transform>();
@@ -95,6 +97,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag != "allowPass")
         {
+            weaponAudio.loop = false;
+            weaponAudio.Stop();
+
             gameObject.GetComponent<Collider2D>().enabled = false;
             if (PlayerLifes.numofLifes > 1)
             {

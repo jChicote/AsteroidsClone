@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Asteroids\LargeAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\SmallAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Level\LevelSpawner.cs" />
+    <Compile Include="Assets\Scripts\Level\MenuUIManager.cs" />
     <Compile Include="Assets\Scripts\Level\PointsController.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenJitter.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenWrapping.cs" />

@@ -9,7 +9,16 @@ public class PlayerLifes : MonoBehaviour
     public Image[] lifes;
     public Sprite lifeIMG;
 
+    public AudioSource lifeAudio;
+    public AudioClip life_gained;
+
     private int gainHealth = 2000;
+
+    void Start()
+    {
+        lifeAudio = GameObject.Find("PlayerAudioSource").GetComponent<AudioSource>();
+        numofLifes = 6;
+    }
 
     void Update()
     {
@@ -29,6 +38,7 @@ public class PlayerLifes : MonoBehaviour
             if(numofLifes < 6)
             {
                 numofLifes += 1;
+                lifeAudio.PlayOneShot(life_gained);
             }
             gainHealth += 2000;
         }
