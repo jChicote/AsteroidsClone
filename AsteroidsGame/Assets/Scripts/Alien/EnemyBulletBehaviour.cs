@@ -2,21 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is a simple bullet that is fired from aliena dn travels in a single direction
 public class EnemyBulletBehaviour : MonoBehaviour
 {
     public float bulletVelocity = 6.0f;
-
     private Rigidbody2D bulletRigid;
 
     void Start()
     {
         bulletRigid = GetComponent<Rigidbody2D>();
         bulletRigid.velocity = transform.up * bulletVelocity;
-    }
-
-    void Update()
-    {
-
     }
 
     //Destroys object when invisible

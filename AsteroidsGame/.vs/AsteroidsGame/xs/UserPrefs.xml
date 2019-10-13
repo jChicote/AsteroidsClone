@@ -1,31 +1,34 @@
 ﻿<Properties StartupConfiguration="{65E644B1-3287-6674-EC08-F5D5C91D6FCA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Level/MenuUIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shader/ScreenJittering.shader">
     <Files>
-      <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="73" Column="41" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="43" Column="22" />
+      <File FileName="Assets/Scripts/Player/WeaponController.cs" Line="97" Column="20" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="20" Column="34" />
       <File FileName="Assets/Scripts/Asteroids/LargeAsteroidBehaviour.cs" />
-      <File FileName="Assets/Scripts/PowerUp/PerkBehaviour.cs" />
+      <File FileName="Assets/Scripts/PowerUp/PerkBehaviour.cs" Line="25" Column="39" />
       <File FileName="Assets/Scripts/Alien/LargeAlienBehaviour.cs" />
-      <File FileName="Assets/Scripts/Alien/SmallAlienBehaviour.cs" />
-      <File FileName="Assets/Scripts/Player/BulletBehaviour.cs" />
-      <File FileName="Assets/Scripts/Level/LevelSpawner.cs" Line="93" Column="35" />
-      <File FileName="Assets/Scripts/Player/FadingBulletBehaviour.cs" />
-      <File FileName="Assets/Scripts/Player/powerFulBullet.cs" />
-      <File FileName="Assets/Scripts/Player/RicochetBehaviour.cs" />
-      <File FileName="Assets/Scripts/Player/PointerBehaviour.cs" />
-      <File FileName="Assets/Scripts/Level/ScreenWrapping.cs" />
+      <File FileName="Assets/Scripts/Alien/SmallAlienBehaviour.cs" Line="86" Column="12" />
+      <File FileName="Assets/Scripts/Player/BulletBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Level/LevelSpawner.cs" Line="117" Column="31" />
+      <File FileName="Assets/Scripts/Player/FadingBulletBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/powerFulBullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/RicochetBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PointerBehaviour.cs" Line="16" Column="41" />
+      <File FileName="Assets/Scripts/Level/ScreenWrapping.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Asteroids/SmallAsteroidBehaviour.cs" />
-      <File FileName="Assets/Scripts/PowerUp/PulseBulletBehaviour.cs" />
-      <File FileName="Assets/Scripts/Alien/SpecialBossBehaviour.cs" />
+      <File FileName="Assets/Scripts/PowerUp/PulseBulletBehaviour.cs" Line="81" Column="29" />
+      <File FileName="Assets/Scripts/Alien/SpecialBossBehaviour.cs" Line="98" Column="44" />
       <File FileName="Assets/Scripts/Alien/EnemyBulletBehaviour.cs" />
       <File FileName="Assets/Scripts/Alien/BossBulletBehaviour.cs" />
-      <File FileName="Assets/Scripts/Level/ScreenJitter.cs" Line="9" Column="2" />
-      <File FileName="Assets/Scripts/Alien/BossEmpBehaviour.cs" />
-      <File FileName="Assets/Scripts/Player/laserBeam.cs" />
-      <File FileName="Assets/Scripts/Level/UIManager.cs" Line="55" Column="40" />
-      <File FileName="Assets/Scripts/Level/PointsController.cs" Line="8" Column="29" />
-      <File FileName="Assets/Scripts/Player/PlayerLifes.cs" Line="20" Column="33" />
-      <File FileName="Assets/Scripts/Level/MenuUIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Level/ScreenJitter.cs" Line="20" Column="30" />
+      <File FileName="Assets/Scripts/Alien/BossEmpBehaviour.cs" Line="58" Column="56" />
+      <File FileName="Assets/Scripts/Player/laserBeam.cs" Line="57" Column="22" />
+      <File FileName="Assets/Scripts/Level/UIManager.cs" Line="59" Column="34" />
+      <File FileName="Assets/Scripts/Level/PointsController.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerLifes.cs" Line="32" Column="14" />
+      <File FileName="Assets/Scripts/Level/MenuUIManager.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/Level/LaserUI.cs" Line="32" Column="13" />
+      <File FileName="Assets/Scripts/Level/PulseUI.cs" Line="18" Column="42" />
+      <File FileName="Assets/Shader/ScreenJittering.shader" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,11 +38,13 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Alien" expanded="True" />
                 <Node name="Asteroids" expanded="True" />
-                <Node name="Level" expanded="True" selected="True" />
+                <Node name="Level" expanded="True" />
                 <Node name="Player" expanded="True" />
                 <Node name="PowerUp" expanded="True" />
               </Node>
-              <Node name="Shader" expanded="True" />
+              <Node name="Shader" expanded="True">
+                <Node name="ScreenJittering.shader" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

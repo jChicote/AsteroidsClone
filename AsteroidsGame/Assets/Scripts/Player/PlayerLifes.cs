@@ -22,6 +22,7 @@ public class PlayerLifes : MonoBehaviour
 
     void Update()
     {
+        //This modifies the image array and disables image object if outside range of current number of lives.
         for (int i = 0; i < lifes.Length; i++)
         {
             if (i < numofLifes)
@@ -34,6 +35,7 @@ public class PlayerLifes : MonoBehaviour
             }
         }
 
+        //Adds additional health when passing a certain amount of points.
         if (PointsController.points >= gainHealth) {
             if(numofLifes < 6)
             {

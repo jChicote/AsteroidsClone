@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+/*
+ * The below code is learnt from reverse engineering multiple approaches towards
+ * creating Screen Static Jittering effects.
+ */
+
 //This executes the following in edit mode
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
@@ -7,6 +12,7 @@
 
 public class ScreenJitter : MonoBehaviour
 {
+    //Experimenting with regions to organise code into sections
     #region Private Properties
 
     public Shader shader;
@@ -55,6 +61,9 @@ public class ScreenJitter : MonoBehaviour
 
     #region MonoBehaviour Functions
 
+    /*
+     * This renders the image effect on screen. passing the variables into the shader.
+     */
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (material == null)

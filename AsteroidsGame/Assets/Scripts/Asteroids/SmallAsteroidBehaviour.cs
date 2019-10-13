@@ -11,7 +11,6 @@ public class SmallAsteroidBehaviour : MonoBehaviour
 
     private Animator anim;
     private Collider2D asteroidCollide;
-    private Rigidbody2D asteroidRB;
 
     void Start()
     {
@@ -32,13 +31,10 @@ public class SmallAsteroidBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
             asteroidCollide.enabled = false;
-
             PointsController.points += 60;
             velocity = 0.2f;
-
             anim.SetBool("isDestroyed", true);
             asteroidAudio.PlayOneShot(astExplodeSmall, 1);
-
             Destroy(gameObject, 1f);
         }
     }

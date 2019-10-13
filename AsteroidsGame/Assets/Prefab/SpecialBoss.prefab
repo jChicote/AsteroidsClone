@@ -386,6 +386,8 @@ MonoBehaviour:
   anim: {fileID: 8083899881266536808}
   bossAudio: {fileID: 0}
   bossClip: {fileID: 8300000, guid: 9be97f3aaa80d4881a47a91045b7f19c, type: 3}
+  pulseLaunch: {fileID: 8300000, guid: 4b83dc32025f24a4b918b9693f2933a8, type: 3}
+  heavyLaunch: {fileID: 8300000, guid: 1f679ad0a39084be0934fe24105600a4, type: 3}
 --- !u!1 &8083899881818193347
 GameObject:
   m_ObjectHideFlags: 0

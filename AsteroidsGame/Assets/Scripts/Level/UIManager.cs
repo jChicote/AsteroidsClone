@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     public static bool isPaused = false;
     public GameObject pauseUI;
+    public GameObject deathUI;
 
     void Update()
     {
@@ -26,6 +27,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //public function for resume buttons
     public void Resume()
     {
         pauseUI.SetActive(false);
@@ -33,6 +35,7 @@ public class UIManager : MonoBehaviour
         isPaused = false;
     }
 
+    //public function for pausing scene
     public void Pause()
     {
         pauseUI.SetActive(true);
@@ -40,20 +43,24 @@ public class UIManager : MonoBehaviour
         isPaused = true;
     }
 
+    //public function for restarting current scene
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         pauseUI.SetActive(false);
+        deathUI.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
         PointsController.points = 0;
         LevelSpawner.playerIsLost = false;
     }
 
+    //public function for quitting to main menu
     public void Quit()
     {
         SceneManager.LoadScene("Menu");
         pauseUI.SetActive(false);
+        deathUI.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
         PointsController.points = 0;

@@ -34,7 +34,6 @@ public class PointerBehaviour : MonoBehaviour
             {
                 if (objInfo.collider.tag == "LargeAsteroid" || objInfo.collider.tag == "SmallAsteroid" || objInfo.collider.tag == "Alien")
                 {
-                    Debug.Log("On Hover");
                     anim.SetBool("isHover", true);
 
                     //interpolates rotation when hovered
@@ -53,6 +52,7 @@ public class PointerBehaviour : MonoBehaviour
             }
             else
             {
+                //Resets the rotation of pointer and sets its animation to "HOVER"
                 if (transform.rotation != Quaternion.Euler(0, 0, 0)) timeCount = 0;
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 anim.SetBool("isHover", false);

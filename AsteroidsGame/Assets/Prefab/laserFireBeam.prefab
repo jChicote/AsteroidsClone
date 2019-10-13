@@ -100,6 +100,8 @@ MonoBehaviour:
     type: 3}
   ricochetPrefab: {fileID: 4436025506520363381, guid: 1e1b4e990b9d745958803a61826dd09d,
     type: 3}
+  weaponAudio: {fileID: 0}
+  burntOut: {fileID: 8300000, guid: e1f6cbadcd133414cbd2caf7276f1e03, type: 3}
 --- !u!95 &7470545254684049642
 Animator:
   serializedVersion: 3

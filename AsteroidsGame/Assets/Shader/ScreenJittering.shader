@@ -13,7 +13,7 @@
 
     float2 _ScanLineJitter; // (displacement, threshold)
     float _HorizontalShake;
-    float2 _ColorAberration;     // (amount, time)
+    float2 _ColorAberration;// (amount, time) [Unused]
 
     float nrand(float x, float y)
     {
@@ -36,7 +36,7 @@
         // Horizontal shake
         float shake = (nrand(_Time.x, 2) - 0.5) * _HorizontalShake;
 
-        // Color drift
+        // Color drift (Unused but necessary in the frac calculation
         float drift = sin(jump + _ColorAberration.y) * _ColorAberration.x;
 
 

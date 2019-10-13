@@ -68,9 +68,11 @@
     <Compile Include="Assets\Scripts\Alien\SpecialBossBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\LargeAsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\Asteroids\SmallAsteroidBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Level\LaserUI.cs" />
     <Compile Include="Assets\Scripts\Level\LevelSpawner.cs" />
     <Compile Include="Assets\Scripts\Level\MenuUIManager.cs" />
     <Compile Include="Assets\Scripts\Level\PointsController.cs" />
+    <Compile Include="Assets\Scripts\Level\PulseUI.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenJitter.cs" />
     <Compile Include="Assets\Scripts\Level\ScreenWrapping.cs" />
     <Compile Include="Assets\Scripts\Level\UIManager.cs" />

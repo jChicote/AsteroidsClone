@@ -15,6 +15,7 @@ public class LevelSpawner : MonoBehaviour
     public GameObject bossAlienFab;
     public GameObject playerPrefab;
     public GameObject perkPowerUp;
+    public GameObject deathUI;
 	public ScreenJitter jitter;
 
     public AudioSource staticAudioSource;
@@ -37,7 +38,7 @@ public class LevelSpawner : MonoBehaviour
     public static float bottomLimit = Screen.height;
     public static float topLimit = Screen.height;
 
-    private bool perkActive = false;
+    //private bool perkActive = false;
     private bool isStatic = false;
     private int sceneIndex;
 
@@ -61,8 +62,8 @@ public class LevelSpawner : MonoBehaviour
             case 1:
                 //Spawn Design Level Aliens
                 InvokeRepeating("SpawnAlien", 7f, 7f);
-                InvokeRepeating("SpawnPowerUp", 20f, 20f);
-                InvokeRepeating("SpawnBoss", 30f, 40f);
+                InvokeRepeating("SpawnPowerUp", 15f, 20f);
+                InvokeRepeating("SpawnBoss", 60f, 70f);
                 break;
             case 2:
                 //Spawn Design Level Aliens
@@ -81,35 +82,36 @@ public class LevelSpawner : MonoBehaviour
                 //Spawning the Asteroids
                 largeAsteroids = GameObject.FindGameObjectsWithTag("LargeAsteroid");
                 amount = largeAsteroids.Length;
-                if (amount != 3 && amount <= 3)
-                {
-                    SpawnAsteroids();
-                }
 
+                //respawning asteroid
+                if (amount != 3 && amount <= 3) SpawnAsteroids();
                 //respawning player
-                if (GameObject.FindGameObjectWithTag("Player") == null && PlayerLifes.numofLifes > 0)
-                {
-                    Debug.Log("Spawning player at lives " + PlayerLifes.numofLifes);
-                    SpawnPlayer();
-                }
+                if (GameObject.FindGameObjectWithTag("Player") == null && PlayerLifes.numofLifes > 0) SpawnPlayer();
+            } else
+            {
+                Invoke("ActivateDeathScreen", 3f);
             }
         } else if (sceneIndex == 0)
         {
             //Spawning the Asteroids
             largeAsteroids = GameObject.FindGameObjectsWithTag("LargeAsteroid");
             amount = largeAsteroids.Length;
-            if (amount != 3 && amount <= 3)
-            {
-                SpawnAsteroids();
-            }
+
+            if (amount != 3 && amount <= 3) SpawnAsteroids();
         }
-        Debug.Log(sceneIndex);
+
+        //If the sceneIndex is the designed level then JitterController can be triggered
         if(sceneIndex == 1) JitterController();
-        
 	}
 
-    //Level Methods
+    //Activates the UI Panel contining the UI during death
+    private void ActivateDeathScreen()
+    {
+        Cursor.visible = true;
+        deathUI.SetActive(true);
+    }
 
+    //Spawn Methods
     private void SpawnAsteroids()
     {
         Instantiate(asteroidPrefab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.Euler(0, 0, Random.Range(0, 360)));
@@ -131,7 +133,6 @@ public class LevelSpawner : MonoBehaviour
                 Instantiate(largeAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
             } else
             {
-                Debug.Log("Small Alien Spawned)");
                 Instantiate(smallAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
             }
         }
@@ -139,18 +140,23 @@ public class LevelSpawner : MonoBehaviour
 
     private void SpawnPowerUp()
     {
-        if (perkActive == false)
+        if (GameObject.FindGameObjectsWithTag("allowPass").Length == 0)
         {
             Instantiate(perkPowerUp, new Vector2(Random.Range(leftLimit, rightLimit), Random.Range(topLimit, bottomLimit)), Quaternion.Euler(0, 0, Random.Range(0, 360)));
-            perkActive = true;
+            //perkActive = true;
         }
     }
 
     private void SpawnBoss()
     {
-        Instantiate(bossAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
+        if (GameObject.Find("SpecialBoss") == null && GameObject.Find("SpecialBoss(Clone)") == null)
+        {
+            Instantiate(bossAlienFab, new Vector3(Random.Range(rightLimit, rightLimit + buffer), Random.Range(topLimit, bottomLimit), 0), Quaternion.identity);
+
+        }
     }
 
+    //This method activates and deactivates the triggers associated with the Static Jitter
 	private void JitterController()
 	{
 		if (isJitting == true)
@@ -165,6 +171,7 @@ public class LevelSpawner : MonoBehaviour
 			jitter.horizontalJitter = maxHoriJit;
 			jitter.colorAberrate = maxcoloraAb;
 			timer -= Time.deltaTime;
+
 			if (timer <= 0)
 			{
 				isJitting = false;
@@ -173,6 +180,7 @@ public class LevelSpawner : MonoBehaviour
 		}
 		else
 		{
+            //Fades out the Static Jitter
             StaticFadeOut();
             jitter.scanLineJitter = Mathf.Clamp(jitter.scanLineJitter - jitVal * Time.deltaTime, minJit, maxScreenJit);
 			jitter.horizontalJitter = Mathf.Clamp(jitter.horizontalJitter - jitVal * Time.deltaTime, minJit, maxHoriJit);
@@ -180,6 +188,7 @@ public class LevelSpawner : MonoBehaviour
 		}
 	}
 
+    //Method for modifying the static audio associated with the Static Jittering effect.
     private void StaticFadeOut()
     {
         if (staticAudioSource.volume > 0)

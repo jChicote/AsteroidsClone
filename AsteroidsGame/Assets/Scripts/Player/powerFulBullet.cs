@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class defines begaviour of the powerful bullet which is the 'WHITE' round fired in three directions
+
 public class powerFulBullet : MonoBehaviour
 {
     public float bulletVelocity = 15.0f;
@@ -12,11 +14,6 @@ public class powerFulBullet : MonoBehaviour
         bulletRigid = GetComponent<Rigidbody2D>();
         bulletRigid.velocity = transform.up * (bulletVelocity + GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetVelocity);
         Invoke("TimedDestroy", 2f);
-    }
-
-    void Update()
-    {
-
     }
 
     //enters trigger when collision is detected

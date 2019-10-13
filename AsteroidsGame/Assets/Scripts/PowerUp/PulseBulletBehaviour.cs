@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class defines begaviour of the Pulse Explosive Scatter Rounds
+
 public class PulseBulletBehaviour : MonoBehaviour
 {
     public GameObject target;
@@ -29,6 +31,7 @@ public class PulseBulletBehaviour : MonoBehaviour
     {
         if (!isDestroyed)
         {
+            //Like the boss projectiles they track and rotate their direction to the target. 
             CheckTargetting();
             timer -= Time.deltaTime;
             if (isTargetting == true)
@@ -46,13 +49,14 @@ public class PulseBulletBehaviour : MonoBehaviour
             {
                 if (totalVel >= 1.0f) totalVel -= 0.05f;
             }
+
             transform.position += transform.up * totalVel * Time.deltaTime;
         }
     }
 
+    //Checks targetting to pointed object
     void CheckTargetting()
     {
-        //Debug.Log(PointerBehaviour.targetObj);
         if (PointerBehaviour.targetObj != null)
         {
             target = PointerBehaviour.targetObj;
@@ -74,5 +78,10 @@ public class PulseBulletBehaviour : MonoBehaviour
             transform.localScale = new Vector3(12, 12, 0);
             Destroy(gameObject, 0.5f);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

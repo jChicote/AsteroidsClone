@@ -22,8 +22,8 @@ public class PerkBehaviour : MonoBehaviour
         if (Random.Range(0, 10) > 5) speed *= -1;
         vertForce = Random.Range(-10, 10);
 
+        //This generates the perk type that the object is assigned to.
         perkType = Random.Range(0, 4);
-        //perkType = 2;
         switch (perkType)
         {
             case 0:
@@ -45,7 +45,6 @@ public class PerkBehaviour : MonoBehaviour
     void Update()
     {
         transform.position += transform.up * speed * Time.deltaTime;
-        //transform.position += new Vector3(0, vertForce * Time.deltaTime, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,6 +52,8 @@ public class PerkBehaviour : MonoBehaviour
         perkAudio.PlayOneShot(perkClip, 0.5f);
         if (collision.gameObject.tag == "bullet" || collision.gameObject.tag == "Player")
         {
+
+            //Below modifies the current weapon mode from the Player's weapon controller
             if (perkType == 0)
             {
                 WeaponController.weaponMode = 1;

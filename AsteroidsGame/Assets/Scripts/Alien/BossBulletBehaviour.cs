@@ -17,7 +17,9 @@ public class BossBulletBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
+    /* This block actively updates the position of the gameobject.
+     * It calculates the direction between the player and the bossBullet and
+     * slerps it's rotation throughout the player's movement*/
     void Update()
     {
         CheckTargetting();
@@ -26,13 +28,14 @@ public class BossBulletBehaviour : MonoBehaviour
             Vector3 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg * -1;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * 2f);
-            //Debug.Log("Checking");
         }
+
         totalVel = (!playerDestroyed) ? Mathf.Clamp(totalVel + 0.05f, 0.0f, maxVel) : Mathf.Clamp(totalVel - 0.05f, 0.0f, maxVel);
         transform.position += transform.up * totalVel * Time.deltaTime;
         TimedDestroy();
     }
 
+    //This method actively checks whether the player target exists within the scene.
     void CheckTargetting()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -46,6 +49,7 @@ public class BossBulletBehaviour : MonoBehaviour
         }
     }
 
+    //This method acts as a timer until the object is destroyed.
     void TimedDestroy()
     {
         empTimer -= Time.deltaTime;
@@ -55,6 +59,7 @@ public class BossBulletBehaviour : MonoBehaviour
         }
     }
 
+    //Destroy on contact with colliders
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "bullet" || collision.gameObject.tag == "LargeAsteroid" || collision.gameObject.tag == "SmallAsteroid")
@@ -63,6 +68,7 @@ public class BossBulletBehaviour : MonoBehaviour
         }
     }
 
+    //Destroy when object becomes invisible
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

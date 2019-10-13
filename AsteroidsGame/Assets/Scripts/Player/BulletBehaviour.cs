@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * NOTE: Bullet behaviour is only defined for ordinary bullet objects
+ */
+
 public class BulletBehaviour : MonoBehaviour
 {
     public float bulletVelocity = 15.0f;
@@ -13,11 +17,6 @@ public class BulletBehaviour : MonoBehaviour
         bulletRigid = GetComponent<Rigidbody2D>();
         bulletRigid.velocity = transform.up * (bulletVelocity + GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetVelocity);
         Invoke("TimedDestroy", 2f);
-    }
-
-    void Update()
-    {
-        
     }
 
     //enters trigger when collision is detected
