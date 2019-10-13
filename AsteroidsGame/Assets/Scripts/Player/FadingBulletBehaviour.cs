@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * NOTE: Fading bullet is behaviour defined for fading bullet that is fired twice during each shot.
+ *
+ * This is activated during collision with PINK coin
+ */
+
 public class FadingBulletBehaviour : MonoBehaviour
 {
     public float bulletVelocity = 15.0f;
@@ -13,11 +19,6 @@ public class FadingBulletBehaviour : MonoBehaviour
         bulletRigid = GetComponent<Rigidbody2D>();
         bulletRigid.velocity = transform.up * (bulletVelocity + GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetVelocity);
         Invoke("TimedDestroy", 0.5f);
-    }
-
-    void Update()
-    {
-
     }
 
     //enters trigger when collision is detected

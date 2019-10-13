@@ -19,6 +19,7 @@ public class RicochetBehaviour : MonoBehaviour
         Destroy(gameObject, 0.4f);
     }
 
+    //Destroys itself when it reaces a collision count of 3
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collisionCount++;

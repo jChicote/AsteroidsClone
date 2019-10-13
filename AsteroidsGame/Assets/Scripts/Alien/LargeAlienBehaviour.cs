@@ -38,6 +38,11 @@ public class LargeAlienBehaviour : MonoBehaviour
         transform.position += newDir * speed * Time.deltaTime;
     }
 
+    /*
+     * This method randomly fires enemy bullet in the general direction of the player
+     * For large aliens the direction is intentionally inaccurate but is within the general direction
+     * of the player
+     */
     private void RandomFire()
     {
         //Checks player position relative to alien
@@ -46,13 +51,9 @@ public class LargeAlienBehaviour : MonoBehaviour
             player = GameObject.FindWithTag("Player").GetComponent<Transform>();
             playerTarget = player.transform.position - transform.position;
 
-
-            Debug.DrawRay(transform.position, playerTarget, Color.red, 5);
-
             //Calculates the aim between the alien and player (coded to be inaccurate)
             //Calculates angle based off tanget between two vectors > include random angle offset > convert to degrees > invert forward orientation
             float angle = (Mathf.Atan2(playerTarget.x, playerTarget.y) + Random.Range(-1, 1)) * Mathf.Rad2Deg * -1;
-            //Debug.Log(Quaternion.Euler(0,0,angle));
 
             //During each call only fire if val is greater than 6
             int randomVal = Random.Range(0, 10);

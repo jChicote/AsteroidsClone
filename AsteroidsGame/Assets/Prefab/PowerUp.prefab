@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2227001940825248449}
   m_Layer: 13
   m_Name: PowerUp
-  m_TagString: perk
+  m_TagString: allowPass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLock: {fileID: 6091999136760877872, guid: d4614dfc9de6a45848090cdd36af41ba,
     type: 3}
+  perkAudio: {fileID: 0}
+  perkClip: {fileID: 8300000, guid: 7bdb170b083f24695a65a22fba016107, type: 3}
 --- !u!95 &2227001940825248511
 Animator:
   serializedVersion: 3

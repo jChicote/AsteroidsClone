@@ -2,36 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This component is 1 of 2 components that controls the player object
+// This class controls mainly the movement, rotation and destruction of the object
+
 public class PlayerController : MonoBehaviour
 {
+    public static bool justDied = false;
+
     float curVelocity;
     float buildVelocity;
     Vector2 playerPos;
     Vector3 prevRotation;
     Transform firingPos;
-    bool playerLost = false;
     bool isMoving = false;
 
     public GameObject bullLoc;
-    //public GameObject bullet;
     public float thrustPower = 10f;
     public AudioSource playerAudio;
+    public AudioSource weaponAudio;
     public AudioClip playerThust;
-    //public AudioClip playerShot;
     public AudioClip playerExplosion;
     public AudioClip gameOver;
     public AudioClip youDied;
     public AudioClip baseExplosion;
 
-    private Rigidbody2D rb;
+    //Velocity getter method
+    public float GetVelocity
+    {
+        get { return curVelocity; }
+    }
+
     private Animator anim;
     private IEnumerator coroutine;
 
     void Start()
     {
+        justDied = false;
         playerAudio = GameObject.Find("PlayerAudioSource").GetComponent<AudioSource>();
+        weaponAudio = GameObject.Find("WeaponAudioSource").GetComponent<AudioSource>();
 
-        rb = GetComponent<Rigidbody2D>();
         firingPos = bullLoc.GetComponent<Transform>();
         playerPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
         anim = GetComponent<Animator>();
@@ -40,10 +49,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (GameStateManager.isPaused == false && playerLost == false)
+        if (UIManager.isPaused == false && justDied == false)
         {
-            CheckFire();
-
             //player rotation
             if (Input.GetKey("a"))
             {
@@ -57,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey("w"))
             {
-                if(!isMoving)
+                if (!isMoving)
                 {
                     playerAudio.clip = playerThust;
                     playerAudio.loop = true;
@@ -85,32 +92,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public float GetVelocity
-    {
-        get { return curVelocity;  }
-    }
-
     //enters trigger when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "perk")
+        if (collision.gameObject.tag != "allowPass")
         {
+            weaponAudio.loop = false;
+            weaponAudio.Stop();
+
             gameObject.GetComponent<Collider2D>().enabled = false;
             if (PlayerLifes.numofLifes > 1)
             {
                 
                 playerAudio.loop = false;
                 playerAudio.PlayOneShot(playerExplosion, 1f);
+                WeaponController.weaponMode = 0;
 
                 PlayerLifes.numofLifes -= 1;
                 Debug.Log("num of lifes" + PlayerLifes.numofLifes);
-                playerLost = true;
+                justDied = true;
                 anim.SetBool("isDestroyed", true);
                 Destroy(gameObject, 1f);
             } else
             {
                 PlayerLifes.numofLifes -= 1;
-                playerLost = true;
+                WeaponController.weaponMode = 0;
+                justDied = true;
                 StartCoroutine(coroutine);
             }
         }
@@ -122,16 +129,6 @@ public class PlayerController : MonoBehaviour
         buildVelocity += thrustPower * Time.deltaTime;
         curVelocity = buildVelocity;
         gameObject.transform.position += transform.up * curVelocity;
-    }
-
-    //Checks whether playerhas fired bullet
-    void CheckFire()
-    {
-        /*if (Input.GetKeyDown("space"))
-        {
-            playerAudio.PlayOneShot(playerShot, 1);
-            Instantiate(bullet, firingPos.position, firingPos.rotation);
-        }*/
     }
 
     //Animates character death whilst running parallel to gameplay

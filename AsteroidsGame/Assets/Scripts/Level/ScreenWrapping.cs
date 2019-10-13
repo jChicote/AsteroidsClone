@@ -27,6 +27,10 @@ public class ScreenWrapping : MonoBehaviour
         topLimit = cam.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, camDistance)).y;
     }
 
+    /*
+     * The below code statement calculates the buffer space between the coordinate limit and the maximum
+     * space allowed when objects pass the threshhold limit. This is calculated for all different sides.
+     */
     private void FixedUpdate()
     {
         if(transform.position.x < leftLimit - buffer)

@@ -156,6 +156,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAudio: {fileID: 0}
   classicBullet: {fileID: 8300000, guid: a7b33f3beb6234e3e8e07275a49b8cf2, type: 3}
+  doubleAudio: {fileID: 8300000, guid: 07f2a8027c7c94e1abfaed266964d9e9, type: 3}
+  tripleAudio: {fileID: 8300000, guid: cc3e900a2149f4250a21083ebcb3e4a1, type: 3}
+  laserAudio: {fileID: 8300000, guid: 397b02b53d680438586ffd9884e8ea62, type: 3}
+  pulse1Audio: {fileID: 8300000, guid: 8a853faad92bb4328b00edb6d2af3589, type: 3}
+  pulse2Audio: {fileID: 8300000, guid: 4ab6feaad50cf4d2186b1d42e9d246ab, type: 3}
+  emptyAudio: {fileID: 8300000, guid: c72225d3cf29f4937b56907dd56abc58, type: 3}
   bulletLocation: {fileID: 460957022921138362}
   normalBullet: {fileID: 6241584436116114207, guid: 218b0e282a4f444c5b62c2d41348adfa,
     type: 3}

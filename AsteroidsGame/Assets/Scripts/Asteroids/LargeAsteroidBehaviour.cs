@@ -11,7 +11,6 @@ public class LargeAsteroidBehaviour : MonoBehaviour
     public AudioClip explosionBase;
 
     private Collider2D asteroidCollide;
-    private Rigidbody2D asteroidRB;
     private Animator anim;
 
     void Start()
@@ -19,9 +18,7 @@ public class LargeAsteroidBehaviour : MonoBehaviour
         asteroidAudio = GameObject.Find("EnemyAudioSource").GetComponent<AudioSource>();
 
         asteroidCollide = GetComponent<Collider2D>();
-        asteroidRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        
     }
 
     
@@ -57,6 +54,7 @@ public class LargeAsteroidBehaviour : MonoBehaviour
                     Instantiate(smallAstPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
                     break;
             }
+
             asteroidAudio.PlayOneShot(asteroidExplosion, 1);
             asteroidAudio.PlayOneShot(explosionBase, 1);
             Destroy(gameObject, 1f);

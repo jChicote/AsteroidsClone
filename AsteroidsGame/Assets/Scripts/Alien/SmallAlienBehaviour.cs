@@ -35,6 +35,13 @@ public class SmallAlienBehaviour : MonoBehaviour
         verticalPosition = transform.position.y;
     }
 
+    /*
+     * During the update method the alien is launched with a specified y position and direction.
+     * The alien will release a timer and which continually trigger the alien's vertical position
+     * towards the player's.
+     *
+     * NOTE: This version of the timer is coded without the use of an invoke method
+     * */
     void Update()
     {
         player = GameObject.FindWithTag("Player");
@@ -88,6 +95,10 @@ public class SmallAlienBehaviour : MonoBehaviour
         }
     }
 
+    /*
+     * This method randomly fires enemy bullet in the direction of player
+     * Compared to large aliens the firing is a lot more accurate.
+     */
     private void RandomFire()
     {
 
